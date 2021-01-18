@@ -1,0 +1,12 @@
+.d-flex {
+    margin-left: 200px;
+    align-items: center;
+}
+
+.d-flex input {margin: 5px}
+
+.col-md-3 {
+    margin: 5px 50px;
+}
+
+

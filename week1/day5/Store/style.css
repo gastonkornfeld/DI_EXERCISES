@@ -1,0 +1,89 @@
+
+
+a {
+    text-decoration: none;
+    color: indigo;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-transform: uppercase;
+    border-bottom:2px  rebeccapurple outset;
+
+
+
+}
+
+ul {
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+
+}
+
+nav img {
+    display: inline;
+}
+
+nav li {
+
+    
+    margin: 20px;
+    padding: 0px;
+    position: relative;
+    
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+   
+}
+
+li {
+    list-style-type: none;
+    display: inline-block;
+    margin-left: 5px;
+    margin-right: 5px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+
+body {
+    background-color: lavenderblush;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+
+img {
+    background-color: white;
+    height: 300px;
+    max-width: 200px;
+    display: inline-block;
+    
+    
+}
+
+.logo {
+    height: 100px;
+    max-width:  100px;
+    position: absolute;
+}
+
+
+footer {
+    background-color: teal;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-top: 30px;
+
+
+   
+    
+}
+
+.container {
+    margin: 20px 0;
+    border: 3px #ccc outset;
+    border-radius: 20px;
+    
+}
+

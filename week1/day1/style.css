@@ -1,0 +1,78 @@
+
+
+/*
+li {
+	color: green;
+	border: 1.4px dotted red;
+	display: inline-block;
+	padding: 5px 20px;
+	margin: 5px 15px;
+	box-shadow:	 5px 5px grey;
+}
+*/
+
+th, td, tr {
+	border: 1px solid brown;
+	border-collapse: collapse;
+}
+/*excercise 4*/
+#exc4 {
+	text-align: center;
+	text-transform: uppercase;
+	font-family: helvetica, italica, serif;
+	color: green;
+	text-decoration: underline;
+	padding: 5px;
+	margin: 20px;
+
+}
+
+/*excercise 6. the flag*/
+.diva, .divb, .divc {
+	display: inline-block;
+	height: 50px;
+	width: 30px;
+	margin: 0;
+}
+
+.flag {
+	/*border: 1px solid black;*/
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+}
+
+.diva {
+	background-color: blue;
+}
+
+
+.divc {
+	background-color: red;
+}
+/*here i write another comments*/
+
+/*excercise 8 */
+
+ #second {
+ 	background-color: blue;
+ 	color: white;
+
+ }
+
+ #first li {
+ 	text-transform: uppercase;
+ 	font-weight: bold;
+
+ }
+
+ .pink {
+ 	color: white;
+ 	background-color: pink;
+ }
+
+.lightblue {
+	background-color: lightblue;
+	margin: 30px;
+	padding: 30px;
+}

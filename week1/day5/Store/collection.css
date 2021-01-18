@@ -1,0 +1,97 @@
+a {
+    text-decoration: none;
+    color: aliceblue;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+footer{
+    display: block;
+    width: 200px;
+    height: 200px;
+}
+
+li {
+    list-style-type: none;
+    display: inline-block;
+    margin: 5px 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif
+}
+div {
+    display: inline-block;
+    margin: 5px 10px;
+    width: 20%;
+    position:relative;
+}
+body {
+    background-color: salmon;
+}
+
+.logo {
+    height: 100px;
+    width: 100px;
+}
+
+img {
+    width: 200 px;
+    height: 200px;
+}
+
+.newinside {
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    left: 4px;
+    top: 5px;
+}
+
+.newinside2 {
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    left: 70px;
+    top: 70px;
+    visibility: hidden;
+}
+
+div:hover {
+    background-color: khaki;
+}
+
+nav li {
+
+    
+    margin: 20px;
+    padding: 0px;
+    position: relative;
+    
+   
+}
+
+figcaption {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+}
+
+
+@media only screen and (min-width: 600px) {
+    div {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+
+@media only screen and (min-width: 900px) {
+    div {
+        width: 40%;
+        float: left;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    div {
+        width: 23%;
+        float: left;
+    }
+}

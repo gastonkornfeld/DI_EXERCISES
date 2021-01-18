@@ -1,0 +1,185 @@
+
+body {
+    background-color: rgb(45, 185, 115);
+}
+
+
+
+/* grid container */
+
+.divparent1 {
+    display: grid;
+    Grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 2fr;
+    grid-gap: 50px 50px;
+    background-color: white;
+    border: 1px solid black;
+    padding: 60px 90px 60px 40px;
+    margin: 0 150px 0 80px;
+}
+
+/* Grid items */
+
+.divred1, .divred2, .divred3 {
+    background-color: rgb(233, 93, 93);
+    height: 200px;
+    border: 2px solid black;
+}
+
+.divblue1, .divblue2, .divblue3 {
+    background-color: rgb(50, 76, 190);
+    border: 2px solid black;
+}
+
+.divyellow {
+    background-color: rgb(185, 176, 47);
+    grid-column: 1/ span 2;
+    height: 200px;
+    border: 2px solid black;
+}
+
+header {
+    background-color: white;
+    border: 1px solid black;
+    margin: 0 150px 0 80px;
+    height: 30px;
+}
+/* exercise 2 */
+
+.Footer {
+    background-color: orange;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    width: 400px;
+    margin: 5px 500px 10px 500px;
+    color: white;
+    font-family: monospace;
+
+
+}
+.header2{
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    width: 400px;
+    background-color: rgb(49, 108, 112);
+    margin: 5px 500px;
+    color: white;
+    font-family: monospace;
+}
+
+.divparent2 {
+    /* border: 1px yellow solid; */
+    height: 500px;
+    width: 400px;
+    background-color: white;
+    display: grid;
+    column-gap: 5px;
+    row-gap: 3px;
+    grid-template-areas: 
+    "h m m"
+    "s m m"
+    "s e e"
+    "ri ri rp";
+
+    margin: 0 500px;
+    
+
+    
+
+}
+
+
+.Hero {
+    background-color: rgba(141, 124, 132, 0.938);
+}
+
+.Main {
+    background-color: rgb(223, 168, 18);
+}
+
+.Sidebar {
+    background-color: rgb(88, 158, 82);
+
+
+}
+
+.Extra {
+    background-color: rgb(80, 79, 79);
+
+}
+
+.RelatedImg {
+    background-color: rgb(2, 99, 59);
+}
+
+.RelatedPosts {
+    background-color: rgba(201, 139, 170, 0.918);
+
+}
+
+.RelatedPosts, .RelatedImg, .Extra, .Sidebar, .Main, .Hero {
+    color: white;
+    font-family: monospace;
+    padding: 5px 3px 5px 3px;
+    line-height: 50px;
+    text-align: center;
+    
+
+    
+}
+
+
+
+/* exercise 3 */
+
+.divparent3 {
+    
+    height: 400px;
+    width: 800px;
+    background-color: white;
+    display: grid;
+    column-gap: 10px;
+    row-gap: 10px;
+    grid-template-areas: 
+    "aa aa aa"
+    "bb cc dd"
+    "bb ee ee"
+    "ff ff gg"
+    "hh hh hh";
+
+    text-align: center;
+    padding: 3px;
+    
+
+    
+
+}
+/* grid items */
+.n1, .n2, .n3, .n4, .n5, .n6, .n7, .n8 {
+    color: white;
+    font-size: 60px;
+    font-family: monospace;
+
+}
+
+.n1, .n6 {background-color: rgb(94, 11, 38);
+
+}
+
+.n2, .n7 {
+    background-color: rgb(119, 57, 170);
+}
+
+.n3, .n8 {
+    background-color: rgb(45, 93, 182);
+}
+
+.n5 {
+    background-color: rgb(197, 114, 197);
+}
+
+.n4 {
+    background-color: rgb(44, 160, 160);
+}

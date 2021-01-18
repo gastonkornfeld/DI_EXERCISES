@@ -1,0 +1,124 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-image: url("images/marvel.jpg");
+    
+    
+}
+/* styling the header */
+h1 {
+    color: maroon;
+    font-size: 80px;
+    font-family: roboto;
+    text-align: center;
+}
+/* paragraph */
+p {
+    color: gold;
+    font-size: 25px;
+    font-family: 'Courier New', Courier, monospace;
+}
+/* images */
+img {
+    display: inline-block;
+    width: 200px;
+    height: 300px;
+}
+/* nav bar */
+nav {
+    width: 100%;
+    height: 100px;
+    background-image: url("images/navbackground.jpg");
+    /* background-repeat: no-repeat;
+    background-size: cover; */
+}
+
+/* nav bar items */
+li {
+    text-decoration: none;
+    font-size: 30px;
+    display: inline-block;
+    width: 25% ;
+    text-align: justify;
+    font-family: 'Courier New', Courier, monospace;
+    color: aqua;
+}
+/* hyperlinks */
+a {
+    text-decoration: none;
+    color: aqua;
+    margin: 0 30px 10px 30px;
+    padding: 0 30px 0 30px;
+    border: aqua 2px dashed;
+}
+
+
+/* media queries */
+
+/* small devices     */
+@media only screen and (max-width: 600px)  {
+        h1 {
+        color: pink;
+        font-size: 40px;
+        font-family: roboto;
+        text-align: center;
+    }
+
+    a {
+        color: green;
+        border: 4px dashed olive;
+    }
+
+    li{
+        display: block;
+    }
+}
+
+/* standart devices */
+@media only screen and (max-width: 850px) {
+    img {
+       float: right;
+       
+    }
+
+    h1 {
+        color: red;
+        font-size: 60px;
+        font-family: roboto;
+        text-align: center;
+    }
+    p {
+        color: red;
+        font-size: 20px;
+        font-family: roboto;
+        text-align: right;
+    }
+
+    a {
+        color: red;
+        border: solid 4px salmon;
+    }
+}
+
+/* big devices */
+@media only screen and (min-width: 1000px) {
+    img {
+       visibility: hidden;
+    }
+
+    p {
+        color: white;
+        font-size: 60px;
+        font-family: roboto;
+        text-align: right;
+    }
+
+    a {
+        color: green;
+        border: 4px dashed olive;
+    }
+
+    
+}

@@ -1,0 +1,200 @@
+
+body {
+    margin: auto 0;
+}
+.bigcontainer {
+    display: flex;
+    width: 450px;
+    border-top: 1px grey solid;
+    border-bottom: 1px grey solid;
+    padding-top: 3px;
+    padding-bottom: 3px;
+
+    
+}
+/* exercise 1 */
+.divparent {
+        height: 150px;
+        /* border: black solid 1px; */
+        width: 100px;
+        background-color: white;
+        display: grid;
+        column-gap: 5px;
+        row-gap: 5px;
+        grid-template-areas: 
+        "a"
+        "b"
+        "c"
+        "d";
+    
+        
+        
+}
+/* middle area */
+
+
+.divparent2 {
+    height: 150px;
+    /* border: black solid 1px; */
+    align-items: center;
+    width: 250px;
+    background-color: white;
+    display: grid;
+    column-gap: 5px;
+    row-gap: 5px;
+    grid-template-areas: 
+    "e f g h";
+
+}
+
+/* right area */
+.divparent3 {
+    height: 150px;
+    /* border: black solid 1px; */
+    width: 100px;
+    background-color: white;
+    display: grid;
+    justify-content: end;
+    column-gap: 5px;
+    row-gap: 5px;
+    grid-template-areas: 
+    "a"
+    "b"
+    "c"
+    "d";
+
+    
+    
+}
+
+/* yellow cubes */
+.cube1, .cube2 {
+    background-color: yellow;
+    border: 1.2px solid black;
+    height: 32px;
+    width: 32px;
+
+}
+
+
+
+.cube2 {
+    
+    margin: 10px;
+}
+
+
+
+/* excercise 2 */
+
+.divparent4 {
+    height: 200px;
+    /* border: black solid 1px; */
+    width: 200px;
+    background-color: white;
+    display: grid;
+    grid-template-columns: repeat(16,1fr);
+    grid-template-rows: repeat(16,1fr);
+    column-gap: 0.4px;
+    row-gap: 0.4px;
+    
+    
+}
+
+
+.orangecube, .browncube, .creamcube {
+    width: 11.5px;
+    height: 11.5px;
+    /* border: solid 1px black; */
+}
+
+
+.orangecube {
+    background-color: orange;
+}
+
+.browncube {
+    background-color: brown;
+
+}
+
+.creamcube {background-color: papayawhip;}
+
+
+/* pattern 2 */
+
+.divparent5 {
+    height: 220px;
+    border: black solid 1px;
+    width: 200px;
+    background-color: white;
+    display: grid;
+    grid-template-columns: repeat(16,1fr);
+    grid-template-rows: repeat(16,1fr);
+    column-gap: 0.5px;
+    row-gap: 0.5px;
+    
+    
+}
+
+
+
+.grey1, .grey2, .grey3, .black {
+    width: 11.5px;
+    height: 12.5px;
+    margin: 0;
+    padding: 0;
+    /* border: solid 1px black; */
+}
+
+
+.black {
+    background-color: black;
+}
+
+.grey1 {
+    background-color: rgb(233, 225, 225);
+}
+
+.grey2{
+    background-color: rgb(190, 187, 187);
+}
+
+.grey3 {
+    background-color: grey;
+}
+
+/* pattern 3 */
+
+.divparent6 {
+    height: 113px;
+    border: black solid 1px;
+    width: 200px;
+    background-color: white;
+    display: grid;
+    grid-template-columns: repeat(16,1fr);
+    grid-template-rows: repeat(16,1fr);
+    column-gap: 0;
+    margin-bottom: 50px;
+    
+    
+    
+}
+
+.red, .white, .pink {
+    width: 12.5px;
+    height: 12.5px;
+    margin: 0;
+    padding: 0;
+}
+
+
+.red {
+    background-color: red;
+
+}
+
+.pink {
+    background-color: pink;
+}
+

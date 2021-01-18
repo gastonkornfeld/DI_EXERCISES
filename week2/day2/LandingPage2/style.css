@@ -1,0 +1,71 @@
+* {
+    /* border: 1px solid white; */
+}
+
+
+.firstheader {
+    text-align: center;
+    margin-bottom: 60px;
+    margin-top: 60px;
+}
+
+
+body {
+    background-color: rgb(45, 185, 115);
+    background-image: url(images/background2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0 auto;
+    max-width: 530px;
+    color: white;
+}
+
+/* form  parent */
+.divparent2 {
+    /* border: 1px yellow solid; */
+    height: 500px;
+    width: 530px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+.inputgrid {
+    /* border: 1px yellow solid; */
+    display: grid;
+    column-gap: 5px;
+    row-gap: 3px;
+    grid-template-areas: 
+    "a b c"
+    "d e f";
+}
+
+
+
+input[type=text] {
+  /* border: 2px solid red; */
+  border-radius: 4px;
+}
+/* select box */
+#country, #country2 {
+    width: 100%;
+}
+
+.divselect * {
+    margin: 5px;
+}
+
+
+.buttom1 {
+    text-align: center;
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+
+
+button {
+    color: aliceblue;
+    background-color: rgb(64, 118, 218);
+    padding: 5px;
+}

@@ -1,0 +1,109 @@
+
+body {
+    background-image: url(images/background2.jpg);
+    background-color: aquamarine;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+
+h1 {
+    text-align: center;
+    font-family: monospace;
+}
+
+.bigcont {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 500px;
+    /* border: solid black 1px; */
+}
+
+.firstdiv, .seconddiv {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    /* border: black solid 1px; */
+    
+
+    
+}
+
+.firstdiv {
+    height: 120px;
+    align-items: center;
+}
+
+.seconddiv {
+    height: 300px;
+
+}
+.firstfirst {
+    font-size: 20px;
+    font-family: monospace;
+    color: cornflowerblue;
+
+}
+
+/* divs inside the secon div */
+.secondfirst {
+    border: 3px outset rgba(238, 231, 231, 0.664);
+    margin: 0 10px;
+    /* padding: 5px; */
+
+}
+.self-end {
+    align-self: flex-end;
+}
+
+.self-center {
+    align-self: center;
+}
+
+.self-init  {
+    align-self: flex-start;
+}
+
+
+.grey {
+    color: grey;
+    font-size: 10px;
+    font-family: monospace;
+    padding: 5px 20px;
+}
+.blue, .green, .pink {
+    height: 100px;
+    line-height: 100px;
+    font-size: small;
+    color: white;
+    font-family: monospace ;
+    
+    
+}
+.blue {
+    background-color: blue;
+    
+}
+
+.green {
+    background-color: green;
+    
+}
+
+.pink {
+    background-color: pink;
+    
+}
+
+
+
+.seconddiv img {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    position: relative;
+    top: 45px;
+    
+}

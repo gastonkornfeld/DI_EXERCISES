@@ -1,0 +1,44 @@
+
+/* setting the grey square */
+.grey {
+    position: static;
+    background-color: lightgray;
+    height: 120px;
+    width: 100%;
+    margin: 0;
+}
+/* adding sharing propertys for booth orange and blue */
+.orange, .blue {
+    width: 8%;
+    height: 90px;
+    position: absolute;
+
+    
+    
+}
+/* Blue square */
+.blue {
+    background-color: lightskyblue;
+    top: 12px;
+    left: 11px;
+    
+}
+
+/* orange square */
+
+.orange {
+    background-color: orange;
+    top: 15px;
+    left: 14px;
+      
+}
+
+/* .orange:hover, .blue:hover {
+    width: 28%;
+    height: 190px;
+    position: relative;
+    background-color: salmon;
+    
+    
+     */
+}

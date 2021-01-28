@@ -1,0 +1,61 @@
+body {
+    background-color: black;
+    padding: 10px;
+}
+.planet {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+}
+.moon {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: rgb(237, 237, 237);
+}
+
+
+.green {
+    background-color: green;
+    
+}
+
+
+.blue {
+    background-color: blue;
+}
+
+
+.red {
+    background-color: red;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+
+.salmon {
+    background-color: salmon;
+}
+
+.brown {
+    background-color: brown;
+}
+
+.orange {
+    background-color: orange;
+}
+
+.purple{
+    background-color: purple;
+}
+
+.right {
+    display: initial;
+}
+

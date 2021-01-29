@@ -60,7 +60,7 @@ body {
 
 
 .output .previous-operand {
-    color: (255, 255, 255, .75);
+    color: white;
     font-size: 3.5rem;
 
 }

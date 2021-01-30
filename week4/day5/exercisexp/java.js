@@ -146,4 +146,4 @@
 
 // if (divBig.style.background == "lightblue") {
 //     alert("Hello " + x.innerText + " and " + y.innerText);
-}
+// }

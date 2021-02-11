@@ -57,16 +57,18 @@ print(f"You have {user_age} years old")
 
 
 amount_of_candles = int(str(user_age)[1])
+amount_of__ = (int(5 - (amount_of_candles/2)) + 1) * "_"
 amount_of_candles = "i" * amount_of_candles
 
 
 
-print(f"        ___{amount_of_candles}___\n       |:H:a:p:p:y:|\n     __|___________|__\n    |^^^^^^^^^^^^^^^^^|\n    |:B:i:r:t:h:d:a:y:|\n    |                 |\n    ~~~~~~~~~~~~~~~~~~~")
+
+print(f"        {amount_of__}{amount_of_candles}{amount_of__}\n       |:H:a:p:p:y:|\n     __|___________|__\n    |^^^^^^^^^^^^^^^^^|\n    |:B:i:r:t:h:d:a:y:|\n    |                 |\n    ~~~~~~~~~~~~~~~~~~~")
 
 
 
 
 # Bonus
 if user_birthday_year % 4 == 0:
-    print(f"        ___{amount_of_candles}___\n       |:H:a:p:p:y:|\n     __|___________|__\n    |^^^^^^^^^^^^^^^^^|\n    |:B:i:r:t:h:d:a:y:|\n    |                 |\n    ~~~~~~~~~~~~~~~~~~~")
+    print(f"        {amount_of__}{amount_of_candles}{amount_of__}\n       |:H:a:p:p:y:|\n     __|___________|__\n    |^^^^^^^^^^^^^^^^^|\n    |:B:i:r:t:h:d:a:y:|\n    |                 |\n    ~~~~~~~~~~~~~~~~~~~")
 

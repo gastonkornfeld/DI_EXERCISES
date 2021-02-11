@@ -22,7 +22,7 @@ import random
 user_string = ""
 
 while len(user_string) != 10:
-    user_string = input("write a string containing exactly 10 carhacters: ")
+    user_string = input("write a string containing exactly 10 carhacters: \n")
     if len(user_string) < 10:
         print("string not long enough")
     elif len(user_string) > 10:

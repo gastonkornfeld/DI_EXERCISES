@@ -45,6 +45,7 @@ while word_in_a_list != list_with_secret_word:
                 word = " ".join(list_with_secret_word)
         print(f"perfect {user_letter_guess} it was in the word")
         print(f"the actual word is now: {word}")
+        
     else:
         mistakes = mistakes - 1
         print(f" the letter '{user_letter_guess}' is not in the word, you have {mistakes} mistakes left")
@@ -52,10 +53,11 @@ while word_in_a_list != list_with_secret_word:
         print(word)
         if mistakes == 0:
             print("you are out of mistakes you lose")
+            print(f" the word was {word_to_guess}")
             break
+    
+
+# if they won i want to display the message
+
+if word_in_a_list == list_with_secret_word:
     print("Amazing you won")
-
-
-
-
-

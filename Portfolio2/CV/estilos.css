@@ -46,6 +46,9 @@ h2 {
     font-size: 1em;
 
 }
+article h2:hover {
+    border-bottom: 2px solid coral;
+}
 
 section {
     width: 70%;
@@ -111,9 +114,14 @@ footer li {
 
 
 .subwork {
-    font-size: 20px;
-    text-decoration: underline;
+    font-size: 0.9em;
+    text-align: center;
+    border-bottom: 1px dotted black;
+    text-transform: uppercase;
+    
 }
+
+
 
 strong {
     font-size: 20px;

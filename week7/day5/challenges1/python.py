@@ -435,7 +435,42 @@ print(count_types(a = 1, b = "string", c=1.0,  d = True, e = False))
 
 
 
+# Exercise 19
+# Write a function that mimics the builtin .split() method for strings.
+# By default the function uses whitespace but it should be able to take an
+#  argument for any character and split with that argument.
+string_to_split = "this is , a , string, that i am gonna separate, by comas, , , , , ,"
+
+def mimic_split(string, argument=","):
+    split_list = []
+    parcial_string = ""
+    
+    for i in range(len(string)):
+        if string[i] == argument:
+            split_list.append(parcial_string)
+            
+            parcial_string = ""
+        else:
+            parcial_string += string[i]
+    split_list.append(parcial_string)
+    return split_list
 
 
 
+print(mimic_split(string_to_split, "1"))
+
+
+
+
+
+
+
+def make_pasword(string):
+    pasword_string = ""
+    for i in range(len(string)):
+        pasword_string += "*"
+    return pasword_string
+
+
+print(make_pasword("akjfjbakfbakhfbakhkfbahfakhf"))
 

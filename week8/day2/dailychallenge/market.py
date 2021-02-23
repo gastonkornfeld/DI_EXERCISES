@@ -24,7 +24,7 @@ class Farm():
     def __init__(self, name):
         self.name = name
         self.animals = {}
-        print(f"{self.name}'s farm")
+        
 
 
     def add_animal(self, animal, amount=1):
@@ -37,6 +37,7 @@ class Farm():
 
 
     def get_info(self):
+        print(f"{self.name}'s farm \n")
         for animal in self.animals:
             print(f"{animal} : {self.animals[animal]}")
         print()

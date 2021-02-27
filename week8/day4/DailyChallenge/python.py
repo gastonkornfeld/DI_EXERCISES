@@ -13,7 +13,7 @@ class Genes():
         self.value = random.choice([True, False])
 
     def mutate(self):
-        self.value = not self.value
+        self.value = random.choice([True, False])
 
 
 genp = Genes()
@@ -25,16 +25,16 @@ print(genp.value)
 class Chromosome():
     def __init__(self, gen1, gen2, gen3, gen4, gen5, gen6, gen7, gen8, gen9, gen10):
         self.list_of_gens = [gen1, gen2, gen3, gen4, gen5, gen6, gen7, gen8, gen9, gen10]
-        # self.gen1_value = gen1.value
-        # self.gen2_value = gen2.value
-        # self.gen3_value = gen3.value
-        # self.gen4_value = gen4.value
-        # self.gen5_value = gen5.value
-        # self.gen6_value = gen6.value
-        # self.gen7_value = gen7.value
-        # self.gen8_value = gen8.value
-        # self.gen9_value = gen9.value
-        # self.gen10_value = gen10.value
+        self.gen1_value = gen1.value
+        self.gen2_value = gen2.value
+        self.gen3_value = gen3.value
+        self.gen4_value = gen4.value
+        self.gen5_value = gen5.value
+        self.gen6_value = gen6.value
+        self.gen7_value = gen7.value
+        self.gen8_value = gen8.value
+        self.gen9_value = gen9.value
+        self.gen10_value = gen10.value
         self.all_trues = False
         self.ietations = 0
     # def print_chrom(self):
@@ -44,7 +44,7 @@ class Chromosome():
         for gene in self.list_of_gens:
             if random.choice([True, False]):
                 gene.mutate()
-        print(self.list_of_gens)
+        # print(self.list_of_gens)
         # print(f"{self.gen1_value}, {self.gen2_value}, {self.gen3_value}, {self.gen4_value}, {self.gen5_value}, {self.gen6_value}, {self.gen7_value}, {self.gen8_value}, {self.gen9_value}, {self.gen10_value}")
 
 
@@ -68,16 +68,16 @@ class Chromosome():
 class Dna():
     def __init__(self, chr1, chr2, chr3, chr4, chr5, chr6, chr7, chr8, chr9, chr10):
         self.list_of_chr = [chr1, chr2, chr3, chr4, chr5, chr6, chr7, chr8, chr9, chr10]
-        self.chr1_value = chr1
-        self.chr2_value = chr2
-        self.chr3_value = chr3
-        self.chr4_value = chr4
-        self.chr5_value = chr5
-        self.chr6_value = chr6
-        self.chr7_value = chr7
-        self.chr8_value = chr8
-        self.chr9_value = chr9
-        self.chr10_value = chr10
+        self.chr1 = chr1
+        self.chr2 = chr2
+        self.chr3 = chr3
+        self.chr4 = chr4
+        self.chr5 = chr5
+        self.chr6 = chr6
+        self.chr7 = chr7
+        self.chr8 = chr8
+        self.chr9 = chr9
+        self.chr10 = chr10
         self.mutate_ranged = 1
         self.ietations = 0
         self.all_chrom_trues = False
@@ -103,32 +103,35 @@ class Dna():
 
 class Organism():
     def __init__(self, dna, range_mutation):
-        self.chr1 = [dna1.chr1_value.gen1_value, dna1.chr1_value.gen2_value, dna1.chr1_value.gen3_value, dna1.chr1_value.gen4_value, dna1.chr1_value.gen5_value, dna1.chr1_value.gen6_value, dna1.chr1_value.gen7_value, dna1.chr1_value.gen8_value, dna1.chr1_value.gen9_value, dna1.chr1_value.gen10_value]
-        self.chr2 = [dna1.chr2_value.gen1_value, dna1.chr2_value.gen2_value, dna1.chr2_value.gen3_value, dna1.chr2_value.gen4_value, dna1.chr2_value.gen5_value, dna1.chr2_value.gen6_value, dna1.chr2_value.gen7_value, dna1.chr2_value.gen8_value, dna1.chr2_value.gen9_value, dna1.chr2_value.gen10_value]
-        self.chr3 = [dna1.chr3_value.gen1_value, dna1.chr3_value.gen2_value, dna1.chr3_value.gen3_value, dna1.chr3_value.gen4_value, dna1.chr3_value.gen5_value, dna1.chr3_value.gen6_value, dna1.chr3_value.gen7_value, dna1.chr3_value.gen8_value, dna1.chr3_value.gen9_value, dna1.chr3_value.gen10_value]
-        self.chr4 = [dna1.chr4_value.gen1_value, dna1.chr4_value.gen2_value, dna1.chr4_value.gen3_value, dna1.chr4_value.gen4_value, dna1.chr4_value.gen5_value, dna1.chr4_value.gen6_value, dna1.chr4_value.gen7_value, dna1.chr4_value.gen8_value, dna1.chr4_value.gen9_value, dna1.chr4_value.gen10_value]
-        self.chr5 = [dna1.chr5_value.gen1_value, dna1.chr5_value.gen2_value, dna1.chr5_value.gen3_value, dna1.chr5_value.gen4_value, dna1.chr5_value.gen5_value, dna1.chr5_value.gen6_value, dna1.chr5_value.gen7_value, dna1.chr5_value.gen8_value, dna1.chr5_value.gen9_value, dna1.chr5_value.gen10_value]
-        self.chr6 = [dna1.chr6_value.gen1_value, dna1.chr6_value.gen2_value, dna1.chr6_value.gen3_value, dna1.chr6_value.gen4_value, dna1.chr6_value.gen5_value, dna1.chr6_value.gen6_value, dna1.chr6_value.gen7_value, dna1.chr6_value.gen8_value, dna1.chr6_value.gen9_value, dna1.chr6_value.gen10_value]
-        self.chr7 = [dna1.chr7_value.gen1_value, dna1.chr7_value.gen2_value, dna1.chr7_value.gen3_value, dna1.chr7_value.gen4_value, dna1.chr7_value.gen5_value, dna1.chr7_value.gen6_value, dna1.chr7_value.gen7_value, dna1.chr7_value.gen8_value, dna1.chr7_value.gen9_value, dna1.chr7_value.gen10_value]
-        self.chr8 = [dna1.chr8_value.gen1_value, dna1.chr8_value.gen2_value, dna1.chr8_value.gen3_value, dna1.chr8_value.gen4_value, dna1.chr8_value.gen5_value, dna1.chr8_value.gen6_value, dna1.chr8_value.gen7_value, dna1.chr8_value.gen8_value, dna1.chr8_value.gen9_value, dna1.chr8_value.gen10_value]
-        self.chr9 = [dna1.chr9_value.gen1_value, dna1.chr9_value.gen2_value, dna1.chr9_value.gen3_value, dna1.chr9_value.gen4_value, dna1.chr9_value.gen5_value, dna1.chr9_value.gen6_value, dna1.chr9_value.gen7_value, dna1.chr9_value.gen8_value, dna1.chr9_value.gen9_value, dna1.chr9_value.gen10_value]
-        self.chr10 = [dna1.chr10_value.gen1_value, dna1.chr10_value.gen2_value, dna1.chr10_value.gen3_value, dna1.chr10_value.gen4_value, dna1.chr10_value.gen5_value, dna1.chr10_value.gen6_value, dna1.chr10_value.gen7_value, dna1.chr10_value.gen8_value, dna1.chr10_value.gen9_value, dna1.chr10_value.gen10_value]
-        self.complete_sistem = [self.chr1, self.chr2, self.chr3, self.chr4, self.chr5, self.chr6, self.chr7, self.chr8, self.chr9, self.chr10]
+        # self.chr1 = [dna1.chr1_value.gen1_value, dna1.chr1_value.gen2_value, dna1.chr1_value.gen3_value, dna1.chr1_value.gen4_value, dna1.chr1_value.gen5_value, dna1.chr1_value.gen6_value, dna1.chr1_value.gen7_value, dna1.chr1_value.gen8_value, dna1.chr1_value.gen9_value, dna1.chr1_value.gen10_value]
+        # self.chr2 = [dna1.chr2_value.gen1_value, dna1.chr2_value.gen2_value, dna1.chr2_value.gen3_value, dna1.chr2_value.gen4_value, dna1.chr2_value.gen5_value, dna1.chr2_value.gen6_value, dna1.chr2_value.gen7_value, dna1.chr2_value.gen8_value, dna1.chr2_value.gen9_value, dna1.chr2_value.gen10_value]
+        # self.chr3 = [dna1.chr3_value.gen1_value, dna1.chr3_value.gen2_value, dna1.chr3_value.gen3_value, dna1.chr3_value.gen4_value, dna1.chr3_value.gen5_value, dna1.chr3_value.gen6_value, dna1.chr3_value.gen7_value, dna1.chr3_value.gen8_value, dna1.chr3_value.gen9_value, dna1.chr3_value.gen10_value]
+        # self.chr4 = [dna1.chr4_value.gen1_value, dna1.chr4_value.gen2_value, dna1.chr4_value.gen3_value, dna1.chr4_value.gen4_value, dna1.chr4_value.gen5_value, dna1.chr4_value.gen6_value, dna1.chr4_value.gen7_value, dna1.chr4_value.gen8_value, dna1.chr4_value.gen9_value, dna1.chr4_value.gen10_value]
+        # self.chr5 = [dna1.chr5_value.gen1_value, dna1.chr5_value.gen2_value, dna1.chr5_value.gen3_value, dna1.chr5_value.gen4_value, dna1.chr5_value.gen5_value, dna1.chr5_value.gen6_value, dna1.chr5_value.gen7_value, dna1.chr5_value.gen8_value, dna1.chr5_value.gen9_value, dna1.chr5_value.gen10_value]
+        # self.chr6 = [dna1.chr6_value.gen1_value, dna1.chr6_value.gen2_value, dna1.chr6_value.gen3_value, dna1.chr6_value.gen4_value, dna1.chr6_value.gen5_value, dna1.chr6_value.gen6_value, dna1.chr6_value.gen7_value, dna1.chr6_value.gen8_value, dna1.chr6_value.gen9_value, dna1.chr6_value.gen10_value]
+        # self.chr7 = [dna1.chr7_value.gen1_value, dna1.chr7_value.gen2_value, dna1.chr7_value.gen3_value, dna1.chr7_value.gen4_value, dna1.chr7_value.gen5_value, dna1.chr7_value.gen6_value, dna1.chr7_value.gen7_value, dna1.chr7_value.gen8_value, dna1.chr7_value.gen9_value, dna1.chr7_value.gen10_value]
+        # self.chr8 = [dna1.chr8_value.gen1_value, dna1.chr8_value.gen2_value, dna1.chr8_value.gen3_value, dna1.chr8_value.gen4_value, dna1.chr8_value.gen5_value, dna1.chr8_value.gen6_value, dna1.chr8_value.gen7_value, dna1.chr8_value.gen8_value, dna1.chr8_value.gen9_value, dna1.chr8_value.gen10_value]
+        # self.chr9 = [dna1.chr9_value.gen1_value, dna1.chr9_value.gen2_value, dna1.chr9_value.gen3_value, dna1.chr9_value.gen4_value, dna1.chr9_value.gen5_value, dna1.chr9_value.gen6_value, dna1.chr9_value.gen7_value, dna1.chr9_value.gen8_value, dna1.chr9_value.gen9_value, dna1.chr9_value.gen10_value]
+        # self.chr10 = [dna1.chr10_value.gen1_value, dna1.chr10_value.gen2_value, dna1.chr10_value.gen3_value, dna1.chr10_value.gen4_value, dna1.chr10_value.gen5_value, dna1.chr10_value.gen6_value, dna1.chr10_value.gen7_value, dna1.chr10_value.gen8_value, dna1.chr10_value.gen9_value, dna1.chr10_value.gen10_value]
+        self.sistem = [dna.chr1, dna.chr2, dna.chr3, dna.chr4, dna.chr5, dna.chr6, dna.chr7, dna.chr8, dna.chr9, dna.chr10]  
+        # self.complete_sistem = [self.chr1, self.chr2, self.chr3, self.chr4, self.chr5, self.chr6, self.chr7, self.chr8, self.chr9, self.chr10]
         dna.mutate_ranged = range_mutation
         self.all_1 = False
         self.iterations = 0
         self.dna = dna
-        print(self.complete_sistem)
+        # print(self.sistem)
+
+    def mutate(self):
+        for chromosoma in self.sistem:
+            if random.choice([True, False]):
+                chromosoma.mutate()
+
 
     def mutate_until_all_1(self):
         while not self.all_1:
-            self.dna.mutate()
-            self.iterations +=1
-            for i in range(10):
-                for j in range(10):
-                    print(self.complete_sistem[i][j])
-                    if self.complete_sistem[i][j] == 1:
-                        continue
+            print(self.sistem[0].gen1_value)
+            self.sistem[0].gen6_value.
+                        
                     
                                        
                         
@@ -271,14 +274,14 @@ chromosome_10 = Chromosome(gen91, gen92, gen93, gen94, gen95, gen96, gen97, gen9
 # chromosome_2.print_chrom()
 # chromosome_1.mutate()
 
-chromosome_1.all_true_chrom()
+# chromosome_1.all_true_chrom()
 
 
 dna1 = Dna(chromosome_1, chromosome_2, chromosome_3, chromosome_4, chromosome_5, chromosome_6, chromosome_7, chromosome_8, chromosome_9, chromosome_10)
 # dna1.mutate()
 # dna1.all_true()
-# organism1 = Organism(dna1, 1)
-# organism1.mutate_until_all_1()
+organism1 = Organism(dna1, 1)
+organism1.mutate_until_all_1()
 
 
 

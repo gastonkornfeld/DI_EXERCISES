@@ -56,8 +56,8 @@ class Universe():
         self.generation = 1
         for y in range(self.h):
             for x in range(self.w):
-                c = random.randint(0, 1)
-                if c == 0:
+                c = random.randint(0, 4)
+                if c == 1:
                     out[x, y] = 1
                 else:
                     out[x, y] = 0
@@ -72,7 +72,7 @@ class Universe():
                 if c == 0:
                     tostring += " "
                 elif c == 1:
-                    tostring += u"\u2588"
+                    tostring += u"\u00B0"
             tostring += "\n"
         return tostring
     
@@ -147,7 +147,7 @@ except:
 try:
     HEIGHT = int(sys.argv[2])
 except:
-    HEIGHT = 25
+    HEIGHT = 40
 
 
 try:

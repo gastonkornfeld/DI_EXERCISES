@@ -83,10 +83,12 @@ class Dog():
         self.weight = weight
         self.speed = (self.weight/self.age) * 10
         self.power = self.speed * self.weight 
-        def bark(self):
-            print("wof wof wof")
+    
+    def bark(self):
+        print("wof wof wof")
 
     def run_speed(self):
+        self.speed = (self.weight/self.age) * 10
         print(f'{self.name} speed is {self.speed}')
 
 
@@ -111,7 +113,7 @@ dog1.fight(dog2)
 dog2.fight(dog3)
 
 
-
+a = input("")
 
 
 

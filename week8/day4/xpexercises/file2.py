@@ -47,6 +47,7 @@ class Dog():
 class PetDog(Dog):
     trained_dog = False
     list_of_dog_tricks = ["does a barrel roll", "stands on their back legs", "shakes your hand" , "plays dead"]
+    
     def train(self):
         self.bark()
         self.trained_dog = True

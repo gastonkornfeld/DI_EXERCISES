@@ -6,7 +6,7 @@ import requests
 
 def get_new(topic):
         
-    r = get("https://newsapi.org/v2/everything", params= {"q": topic, "from": "2021-03-08", "sortBy" : "popularity", "apiKey":"5719809a4f814d0d9f8cb98e7a3d97de"})
+    r = get("https://newsapi.org/v2/everything", params= {"q": topic, "from": "2021-03-12", "sortBy" : "popularity", "apiKey":"5719809a4f814d0d9f8cb98e7a3d97de"})
     convert = json.loads(r.text)
     print(convert.keys())
     

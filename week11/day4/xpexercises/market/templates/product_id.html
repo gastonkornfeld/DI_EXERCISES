@@ -1,0 +1,37 @@
+
+
+
+<!-- 
+# ProductId, Category, MainCategory,TaxTarifCode, SupplierName, WeightMeasure
+# WeightUnit, Description, Name, ProductPicUrl, Status, Quantity, UoM, CurrencyCode
+# Price, Width, Depth, Height, DimUnit -->
+
+
+
+{% extends "index.html" %}
+
+{% block body %}
+    
+    
+    
+    {% for product in data %}
+        {% if product["ProductId"] == id %}
+            <ul>
+                <li><h1>{{ product["MainCategory"] }}</h1></li>    
+                <li><h2>PRODUCT: {{product["Name"] }}</h2></li>
+                <li>Description: {{ product["Description"] }} </li>
+                <li>Category: {{ product["Category"] }}</li>
+                <li>Supllier name: {{ product["SupplierName"] }}</li>
+                <li>{{product["UoM"]}}</li>
+            </ul>
+            <p>Quantity: {{ product["Quantity"] }}</p>
+            <p>${{ product["Price"] }}</p>
+            <p>Product ID: {{product["ProductId"]}}</p>
+            <p></p>
+            
+            
+        {% endif %}
+        
+    {% endfor %}
+
+{% endblock %}

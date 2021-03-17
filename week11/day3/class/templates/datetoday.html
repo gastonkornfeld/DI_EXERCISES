@@ -1,0 +1,57 @@
+{% set today_message = "hello user i want to print the today date for you" %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datetime</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+</head>
+{%if hour >= 20 %}
+    <div style="background-color: black; color: white;">
+
+        {% set img_height = 80 %}
+        {% set img_width = 80 %}
+        <h1>{{ today_message | upper }}</h1>
+
+        <p>Today is {{ day }}/ {{month}}/ {{year}}</p>
+
+        <p>The time is {{hour}} : {{minute}} : {{second}}</p>
+         
+        {%if hour >= 20 %}
+            <img src="/static/moon.png" alt="moon" width="{{ img_width }}" height="{{img_height}}" style="background-color: white;" >
+        
+        {% else %} 
+            <img src="/static/sun.png" alt="sun" width="{{ img_width }}" height="{{img_height}}" >
+        {% endif %}
+    </div>
+{%else%}
+    <div style="background-color: yellow; color: red;">
+
+        {% set img_height = 80 %}
+        {% set img_width = 80 %}
+        <h1>{{ today_message | upper }}</h1>
+
+        <p>Today is {{ day }}/ {{month}}/ {{year}}</p>
+
+        <p>The time is {{hour}} : {{minute}} : {{second}}</p>
+
+        {%if hour >= 20 %}
+            <img src="/static/moon.png" alt="moon" width="{{ img_width }}" height="{{img_height}}" >
+        
+        {% else %} 
+            <img src="/static/sun.png" alt="sun" width="{{ img_width }}" height="{{img_height}}" >
+        {% endif %}
+
+    </div>
+{% endif %}
+
+</html>
+
+
+
+
+</html>
+

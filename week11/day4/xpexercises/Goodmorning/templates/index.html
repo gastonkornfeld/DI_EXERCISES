@@ -1,0 +1,44 @@
+<!-- 
+# Between 08:00 and 13:00 the message should display - Good Morning.
+# Between 13:00 and 17:00 the message should display - Good Afternoon.
+# Between 17:00 and 21:00 the message should display - Good Evening.
+# Between 21:00 and 08:00 the message should display - Good Night. -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HELLO HELLO</title>
+</head>
+
+
+<body>
+    {% if hour >= 8 and not hour > 13 %}
+        <h1>Hello</h1>
+        <h2>Good Morning</h2>  
+        <p>I will recomend you to do some excercise and have a balanced breakfast</p>
+    {% elif hour >= 13 and not hour > 17 %}
+        <h1>Hello</h1>
+        <h2>Good Afternoon</h2>  
+        <p>Nothing more nice than a walk after lunch </p>
+        <p>You should be thinking on a movie to pick tonight</p>
+    {% elif hour >= 17 and not hour > 21 %}
+        <h1>Hello</h1>
+        <h2>Good Evening</h2> 
+        <p>Dinner time aproaching</p>
+        <p>Dont forget to shop everithing you need before is to late</p>
+    {% else %}
+        <h1>Hello</h1>
+        <h2>Good Night</h2> 
+        <p> I hope it is not to late to be awake</p>
+    
+    
+    
+    {% endif %}        
+
+
+</body>
+</html>

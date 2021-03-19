@@ -1,0 +1,28 @@
+
+
+
+{% extends "index.html" %}
+
+{% block body %}
+
+<h1>Cart</h1>
+<div>
+    <h1>Total: ${{total}}</h1>
+</div>
+
+<h2>Products in your cart</h2>
+
+{% for product in cart %}
+    <div>
+        <h2>PRODUCT: {{product["Name"] }}</h2>
+        <p>Description: {{ product["Description"] }}</p> 
+        <h4>${{ product["Price"] }}</h4>
+        <h4>{{ product["ProductId"] }}</h4>
+        <a href="{{'/delete_from_cart/' + (product['ProductId'])}}"><button>Delete From Cart</button></a>
+    </div>
+   
+{% endfor %}
+
+    
+
+{% endblock %}

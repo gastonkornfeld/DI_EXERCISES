@@ -1,0 +1,15 @@
+
+
+
+{% extends "layer.html" %}
+
+
+
+{% block body %}
+<h1>Pokemon ID {{ id1 }}</h1>
+<h2>Name: {{name}}</h2>
+<h3>Classes</h3>
+{% for classes in clss %}
+    <li>{{classes}}</li>
+{% endfor %}
+{% endblock %}

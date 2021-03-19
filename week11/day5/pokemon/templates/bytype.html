@@ -1,0 +1,18 @@
+
+
+
+
+
+{% extends "layer.html" %}
+{% block body %}
+
+
+
+<h1>Pokemon Type : {{ typeP }}</h1>
+
+
+    {% for pokemon in pokemons %}
+        <li>{{ pokemon['pokemon']['name']}} Id: {{ pokemon['pokemon']['url'][-4:-1]}}</li>
+    {% endfor %}
+
+{% endblock %}

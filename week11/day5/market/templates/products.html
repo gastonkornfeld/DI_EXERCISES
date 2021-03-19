@@ -1,0 +1,42 @@
+
+<!-- 
+# ProductId, Category, MainCategory,TaxTarifCode, SupplierName, WeightMeasure
+# WeightUnit, Description, Name, ProductPicUrl, Status, Quantity, UoM, CurrencyCode
+# Price, Width, Depth, Height, DimUnit -->
+
+
+
+{% extends "index.html" %}
+
+{% block body %}
+    <h1>This is the list of hour products</h1>
+    
+    
+    {% for product in data %}
+        {% set url = "/static/" %}
+        {% set imageurl = (product['ProductPicUrl']) %}
+        {% set final_url = url + imageurl %}
+        
+        <img src="{{ final_url }}" alt="{{'/static/'}} + {{product['ProductPictUrl']}}" height="100" width="180">
+        <h2>PRODUCT: {{product["Name"] }}</h2>
+        <p>{{ product["Description"] }}</p>
+        <h4>Category: {{ product["Category"] }}</h4>
+        <p>Quantity: {{ product["Quantity"] }}</p>
+        
+       
+        
+        <a href="{{'product/' + (product['ProductId'])}}"><button>Go To The Product</button></a> <br><br>
+    {% endfor %}
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

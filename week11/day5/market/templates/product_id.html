@@ -1,0 +1,45 @@
+
+
+
+<!-- 
+# ProductId, Category, MainCategory,TaxTarifCode, SupplierName, WeightMeasure
+# WeightUnit, Description, Name, ProductPicUrl, Status, Quantity, UoM, CurrencyCode
+# Price, Width, Depth, Height, DimUnit -->
+
+
+
+{% extends "index.html" %}
+
+{% block body %}
+
+
+    
+    
+    {% for product in data %}
+        {% if product["ProductId"] == id %}
+            {% set url = "/static/" %}
+            {% set imageurl = (product['ProductPicUrl']) %}
+            {% set final_url = url + imageurl %}
+            <ul>
+                <h1>Details</h1>
+                <img src="{{ final_url }}" alt="{{'/static/'}} + {{product['ProductPictUrl']}}" height="100" width="180">
+                <li><h1>{{ product["MainCategory"] }}</h1></li>    
+                <li><h2>PRODUCT: {{product["Name"] }}</h2></li>
+                <li>Description: {{ product["Description"] }} </li>
+                <li>Category: {{ product["Category"] }}</li>
+                <li>Supllier name: {{ product["SupplierName"] }}</li>
+                <li>{{product["UoM"]}}</li>
+               
+            </ul>
+            <p>Quantity: {{ product["Quantity"] }}</p>
+            <p>${{ product["Price"] }}</p>
+            <p>Product ID: {{product["ProductId"]}}</p>
+            <a href="{{'/add_to_cart/' + (product['ProductId'])}}"><button>Add To Cart</button></a>
+            
+            
+            
+        {% endif %}
+        
+    {% endfor %}
+
+{% endblock %}

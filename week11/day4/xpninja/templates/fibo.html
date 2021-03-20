@@ -1,0 +1,27 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fibonacci</title>
+</head>
+
+{% if hour > 8 and not hour > 20 %}
+
+    <body style="background-color: aquamarine; color: blue;">
+        <h3> The Fibo sequence for the first {{number}} numbers is: </h3>
+        <p> {{numbers}}</p>
+    </body>
+
+{% else %}
+    
+    <body style="background-color: black; color: white;">
+        <h3> The Fibo sequence for the first {{number}} numbers is: </h3>
+        <p> {{numbers}}</p>
+    </body>
+{% endif %}
+
+</html>

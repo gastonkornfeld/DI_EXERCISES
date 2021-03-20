@@ -1,0 +1,25 @@
+
+
+
+
+{% extends "index.html" %}
+
+{% block body %}
+
+
+{% for product in data %}
+    
+        {% if name in product["Name"].lower()  %}
+            <ul>  
+                <li><h2>PRODUCT: {{product["Name"] }}</h2></li>
+                <li>Description: {{ product["Description"] }} </li>
+                <li>Supllier name: {{ product["SupplierName"] }}</li>
+                <li>Category: {{ product["Category"] }}</li>
+            </ul>
+            <p>${{ product["Price"] }}</p>
+            <p>Product ID: {{product["ProductId"]}}</p>
+            
+        {% endif %}
+{% endfor %}
+
+{% endblock %}

@@ -27,7 +27,7 @@ file_route = "static/productslist.json"
 
 with open(file_route) as json_file:
     data = json.load(json_file)
-print(data)
+# print(data)
 
 
 
@@ -53,7 +53,19 @@ def product(product_id):
 
 
 
-app.run(debug=True, port=5001)    
+@app.route('/category/<category>')
+def category(category):
+    
+    return render_template('category.html', data = data, category = category)
+
+
+@app.route('/name/<name>')
+def name(name):
+    
+    return render_template('name.html', data = data, name = name)
+
+
+app.run(debug=True, port=5003)    
     
         
         

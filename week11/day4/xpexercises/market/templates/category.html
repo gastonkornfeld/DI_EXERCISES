@@ -1,0 +1,22 @@
+
+
+
+{% extends "index.html" %}
+
+{% block body %}
+
+{% for product in data %}
+        {% if product["Category"] == category %}
+            <ul>  
+                <li><h2>PRODUCT: {{product["Name"] }}</h2></li>
+                <li>Description: {{ product["Description"] }} </li>
+                <li>Supllier name: {{ product["SupplierName"] }}</li>
+                <li>{{product["UoM"]}}</li>
+            </ul>
+            <p>${{ product["Price"] }}</p>
+            <p>Product ID: {{product["ProductId"]}}</p>
+            <p></p>
+        {% endif %}
+{% endfor %}
+
+{% endblock %}

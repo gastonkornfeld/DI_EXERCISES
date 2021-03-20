@@ -17,15 +17,17 @@
         {% set imageurl = (product['ProductPicUrl']) %}
         {% set final_url = url + imageurl %}
         
-        <img src="{{ final_url }}" alt="{{'/static/'}} + {{product['ProductPictUrl']}}" height="100" width="180">
+        <img src="{{ final_url }}" alt="product-image" height="100" width="180">
         <h2>PRODUCT: {{product["Name"] }}</h2>
-        <p>{{ product["Description"] }}</p>
+        <p>Description: {{ product["Description"] }}</p>
         <h4>Category: {{ product["Category"] }}</h4>
-        <p>Quantity: {{ product["Quantity"] }}</p>
-        
+        <p>Price: {{ product["Price"] }}</p>
+        <a href="{{'product/' + (product['ProductId'])}}"><button>Go To The Product</button></a> 
+        <a href="{{'/add_to_cart/' + (product['ProductId'])}}"><button style="background-color: salmon;">Add To Cart</button></a>
+        <br><br>
        
         
-        <a href="{{'product/' + (product['ProductId'])}}"><button>Go To The Product</button></a> <br><br>
+        
     {% endfor %}
 
 

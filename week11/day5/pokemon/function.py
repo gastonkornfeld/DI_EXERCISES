@@ -6,7 +6,7 @@ from flask import Flask, render_template
 def get_pokemon_name(id):
 
 
-    url = 'https://pokeapi.co/api/v2/pokemon/' + str(id)
+    url = 'https://pokeapi.co/api/v2/pokemon/' + str(id) 
     poke = get(url)
     data = poke.json()
     name = data['name']

@@ -23,6 +23,12 @@ def by_type(typeP):
 
     return render_template('bytype.html', pokemons = pokemons_class, typeP = typeP)
 
+
+@app.route('/pokemon/byname/<name>')
+def by_name(name):
+    return render_template('byname.html', name=name)
+
+
 @app.route('/pokemon/bytype')
 def by_type2():
     pokemons_class = get_poke_by_class("water")
@@ -38,6 +44,10 @@ def by_type3():
 
 
 @app.route('/')
+def all_classes():
+    return render_template('main.html')
+
+
 @app.route('/pokemon/all')
 def all_poke():
     pokemons_names = []

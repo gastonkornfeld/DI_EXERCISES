@@ -12,7 +12,9 @@
 
 
     {% for pokemon in pokemons %}
-        <li>{{ pokemon['pokemon']['name']}} Id: {{ pokemon['pokemon']['url'][-4:-1]}}</li>
+ 
+        <li style="text-transform: uppercase;">{{ pokemon['pokemon']['name']}} Id: {{ pokemon['pokemon']['url'][-5:-1]}}</li>
+    
     {% endfor %}
 
 {% endblock %}

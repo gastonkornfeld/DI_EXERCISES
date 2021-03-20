@@ -1,0 +1,17 @@
+<!-- Exercise 1 : Current Date
+Using Flask, create a template that displays the current date.
+Hint : Use the datetime module
+
+ -->
+
+
+{% extends 'layer.html' %}
+
+{% block body %}
+
+<h1> Today {{today.day}}/{{today.month}}/{{today.year}}</h1>
+<h2>Time: {{today.hour}}:{{today.minute}}:{{today.second}}</h2>
+
+
+{% endblock %}
+

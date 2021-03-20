@@ -1,0 +1,29 @@
+
+<!-- 
+Exercise 2: Random Number
+Create a view that accepts a number between 1 and 100.
+Hint: use a route that accepts an argument : an integer
+In the view, assign a random number between 1 and 100 to a new variable.
+if the value of the variable and the value of the parameter is the same,
+ display a success message to the user, else don’t.
+ -->
+
+
+
+{% extends 'layer.html' %}
+
+{% block body %}
+
+{% if number == cpu_number %}
+
+    <h1> EXCELLENT</h1>
+    <h2>You bouth say {{number}}</h2>
+{% else %}
+
+    <h1>Your Number: {{number}}</h1>
+    <h1>Computer Number: {{cpu_number}}</h1>
+    <h3>Try Again</h3>
+{% endif %}
+
+{% endblock %}
+

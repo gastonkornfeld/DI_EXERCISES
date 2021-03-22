@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="container p-3 my-3 bg-primary text-white">
+        <h1>Name: {{ form.complete_name.data }}</h1>
+        <strong>Email: </strong><a style='color: white;' href="#">{{ form.email.data }}</a>
+    </div>
+
+    
+    <div class="container p-3 my-3 bg-dark text-white">
+        <h2>Studies</h2>
+        <p>Throw effort now I have a {{ form.studies.data }} degree</p>
+    </div>
+    <div class="container p-3 my-3 bg-primary text-white">
+        <h2>Work experience</h2>
+        <p> {{ form.work.data }}</p>
+    </div>  
+    <div class="container p-3 my-3 bg-dark text-white">
+        <h2>Vision</h2>
+        <p>I will love to apply for a {{ form.position.data }} position</p>
+    </div>
+   
+
+   <footer> 23/3/2021</footer>
+
+{% endblock %}

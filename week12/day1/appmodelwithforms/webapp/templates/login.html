@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <form action="" method="POST">
+        <p> Errors: {{ form1.errors }}</p>
+        <p>
+            {{ form1.query.label }}
+            {{ form1.query() }}
+        </p>
+        <p>
+            {{ form1.age.label }}
+            {{ form1.age() }}
+        </p>
+        <p>
+            {{ form1.profession.label }}
+            {{ form1.profession() }}
+        </p>
+        <p>
+            {{ form1.password.label }}
+            {{ form1.password() }}
+        </p>
+        <p>
+            {{ form1.email.label }}
+            {{ form1.email() }}
+        </p>
+        <p>
+            {{ form1.submit() }}
+        </p>
+    </form>
+
+
+{% endblock %}

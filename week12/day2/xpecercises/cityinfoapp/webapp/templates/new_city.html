@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div>
+        <h2>New city added</h2>
+        <h3>Name: {{ form.name.data }} </h3>
+        <h3> Country : {{ form.country.data }}</h3>
+        <h3>Habitants : {{ form.habitants.data }}</h3>
+        <h3>AREA: {{ form.area.data }} mts square</h3>
+    </div>
+    
+
+{% endblock %}

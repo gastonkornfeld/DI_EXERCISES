@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section>
+    <h1>First task</h1>
+    <ol>
+    {% for user in all_users %}
+
+        
+        <li>    
+            <p>Name:  {{ user.name}} </p>
+            <p>Street:  {{ user.street}} </p>
+            <p>City :  {{ user.city}} </p>
+            <p>Zip code :  {{ user.zip_code}} </p>
+        </li>
+
+    {% endfor %}
+    </ol>
+</section>
+
+<br>
+<br>
+<div>
+    <h1>Second Task</h1>
+    {% for user in ros %}
+        <h2> Name: {{ user.name }}</h2>
+        <h2> City: {{ user.city }}</h2>
+        <h2> Adress: {{ user.street }}</h2>
+    {% endfor %}
+</div>
+<br>
+<br>
+
+<section>
+    <h1>Third Task</h1>
+    <ol>
+    {% for user in all_users[0:5] %}
+
+        
+        <li>    
+            <p>Name:  {{ user.name}} </p>
+            <p>Street:  {{ user.street}} </p>
+            <p>City :  {{ user.city}} </p>
+            <p>Zip code :  {{ user.zip_code}} </p>
+        </li>
+
+    {% endfor %}
+    </ol>
+</section>
+{% endblock %}

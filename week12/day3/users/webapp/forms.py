@@ -12,7 +12,7 @@ from wtforms.validators import DataRequired, Length, Email, EqualTo
 # You can add some validators to the form fields if you want :)
 
 class AddUserForm(FlaskForm):
-    username = StringField('Username',
+    name = StringField('Name',
                         validators=[DataRequired(), Length(min=2, max=20)])
     street = StringField('Street',
                         validators=[DataRequired()])
@@ -22,4 +22,11 @@ class AddUserForm(FlaskForm):
     zipcode = IntegerField('Zipcode',
                         validators=[DataRequired()])
     submit = SubmitField('ADD USER')
+
+class LoginForm(FlaskForm):
+    name = StringField('Username',
+                        validators=[DataRequired(), Length(min=2, max=20)])
+    city = StringField('City',
+                        validators=[DataRequired()])
+    submit = SubmitField('Login')
 

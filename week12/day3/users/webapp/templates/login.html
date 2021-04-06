@@ -7,10 +7,10 @@
         <form action="" method="POST">
             {{ form.hidden_tag() }}
             <fieldset class="form-group">
-                <legend class="border-bottom mb-4">Add a new user </legend>
+                <legend class="border-bottom mb-4">Log In </legend>
+               
                 <div class="form-group">
                     {{ form.name.label(class='form-control-label') }}
-
                     {% if form.name.errors %}
                         {{ form.name(class='form-control form-control-lg is-invalid') }}
                         <div class="invalid-feedback">
@@ -20,20 +20,6 @@
                         </div>
                     {% else %}
                         {{ form.name(class='form-control form-control-lg') }}
-                    {% endif %}
-                </div>
-
-                <div class="form-group">
-                    {{ form.street.label(class='form-control-label') }}
-                    {% if form.street.errors %}
-                        {{ form.street(class='form-control form-control-lg is-invalid') }}
-                        <div class="invalid-feedback">
-                            {% for error in form.street.errors %}
-                                <span>{{ error }}</span>
-                            {% endfor %}
-                        </div>
-                    {% else %}
-                        {{ form.street(class='form-control form-control-lg') }}
                     {% endif %}
                 </div>
 
@@ -50,28 +36,15 @@
                         {{ form.city(class='form-control form-control-lg') }}
                     {% endif %}
                 </div>
-
-                <div class="form-group">
-                    {{ form.zipcode.label(class='form-control-label') }}
-                    {% if form.zipcode.errors %}
-                        {{ form.zipcode(class='form-control form-control-lg is-invalid') }}
-                        <div class="invalid-feedback">
-                            {% for error in form.zipcode.errors %}
-                                <span>{{ error }}</span>
-                            {% endfor %}
-                        </div>
-                    {% else %}
-                        {{ form.zipcode(class='form-control form-control-lg') }}
-                    {% endif %}
-                </div>
-
+            
             </fieldset>
             <div class="form-group">
                 {{ form.submit(class='btn btn-outline-info') }}
             </div>
+            <small class="text-muted ml-2">
+                <a href="#">Forgot Password?</a>
+            </small>
         </form>
     </div>
-   
-
-
+    
 {% endblock %}

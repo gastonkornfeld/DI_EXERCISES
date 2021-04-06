@@ -29,11 +29,11 @@ def profile(id_user):
 def add_user():
     form = forms.AddUserForm()
     if form.validate_on_submit():
-        username = form.username.data
+        name = form.name.data
         street = form.street.data
         city = form.city.data
         zipcode = form.zipcode.data
-        new_user = models.User(name = username, street = street, city = city, zip_code = zipcode)
+        new_user = models.User(name = name, street = street, city = city, zip_code = zipcode)
         db.session.add(new_user)
         db.session.commit()
         flask.flash(f'Username added Succesfully', 'success')
@@ -41,4 +41,19 @@ def add_user():
         return flask.redirect(flask.url_for('users'))
     return flask.render_template('add_user.html', title = 'ADD user', form = form)
 
+@app.route('/login', methods=['GET', "POST"])
+def login():
+    # all_users = models.User.query.all()
+    form = forms.LoginForm()
+    if form.validate_on_submit():
+        name = form.name.data
+        city = form.city.data
+        if models.User.query.filter_by(name=name, city = city).first() == None:
+            flask.flash(f'The user doesnt existe please sign up', 'danger')
+            return flask.redirect(flask.url_for('add_user'))
+        else:
+            flask.flash(f'Login Succesfully', 'success')
+            return flask.redirect(flask.url_for('home'))
+            
 
+    return flask.render_template('login.html', form = form)

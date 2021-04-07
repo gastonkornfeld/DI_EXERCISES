@@ -19,6 +19,7 @@ migrate = flask_migrate.Migrate(app, db)
 
 
 from . import routes, models, funct
+
 all_users = models.User.query.all() 
 
 

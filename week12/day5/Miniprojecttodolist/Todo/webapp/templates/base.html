@@ -12,7 +12,7 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/master.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/master2.css') }}" />
 
 
 </head>
@@ -24,9 +24,9 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-            <a class="nav-item nav-link active" href="{{ url_for('home')}}">Home <span class="sr-only">(current)</span></a>
-            <a class="nav-item nav-link active" href="{{ url_for('register')}}">Register <span class="sr-only">(current)</span></a>
-            <a class="nav-item nav-link active" href="{{ url_for('login')}}">Login <span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link active" href="{{ url_for('index')}}">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link active" href="#">Add New Task <span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link active" href="#">Login <span class="sr-only">(current)</span></a>
             <a class="nav-item nav-link active" href="{{ url_for('about')}}">About <span class="sr-only">(current)</span></a>
         </div>
     </div>

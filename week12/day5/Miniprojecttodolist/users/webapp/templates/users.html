@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% if userlog.status == 'Admin' %}
+    <section>
+        <h1>First task</h1>
+        <table class="table">
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Street</th>
+                <th scope="col">City</th>
+                <th scope="col">Zip code</th>
+                <th scope="col">Status</th>
+            </tr>
+        {% for user in all_users %}
+            <tr>    
+                <td> {{ user.name}} </td>
+                <td> {{ user.street}} </td>
+                <td> {{ user.city}} </td>
+                <td> {{ user.zip_code}} </td>
+                <td>  {{ user.status}} </td>
+            </tr>
+
+        {% endfor %}
+        </table>
+    </section>
+{% else %}
+    <h1>You are not an Admin</h1>
+    <h2> <strong>  Name: </strong> {{ userlog.name }}</h2>
+    <h3>City {{ userlog.city }}</h3>
+    <h3>Street {{ userlog.street }}</h3>
+    <h4> Zip code {{ userlog.zip_code }}</h4>
+
+{% endif %}
+<br>
+<br>
+
+
+
+{% endblock %}

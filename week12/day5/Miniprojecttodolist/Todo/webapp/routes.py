@@ -1,11 +1,43 @@
-from flask import request
+
 import flask
 
-from . import app       # . is webapp/
+from . import app       
+from . import models
 from . import forms
+from . import db
 
 
+@app.route('/', methods=['GET', "POST"])
+@app.route('/index', methods=['GET', "POST"])
+def index():
+    
+    all_task = models.Todo.query.all()
+    form = forms.AddTodoForm()
+    if form.validate_on_submit():
+        content = form.task.data
+        task1 = models.Todo(details = content, completed = False)
+        db.session.add(task1)
+        db.session.commit()
+        flask.flash(f'Task added to the list')
+        return flask.redirect(flask.url_for('index'))
+    return flask.render_template('index.html', title = 'Home', form = form, tasks = all_task)
 
+
+@app.route('/complete/<todo_id>')
+def complete(todo_id):
+    taks_finished = models.Todo.query.get(todo_id)
+    db.session.delete(taks_finished)
+    db.session.commit()
+    return flask.redirect(flask.url_for('index'))
+
+
+@app.route('/delete_all')
+def delete():
+    all_task = models.Todo.query.all()
+    for task in all_task:
+        db.session.delete(task)
+        db.session.commit()
+    return flask.redirect(flask.url_for('index'))
 
 
 @app.route('/about')
@@ -13,31 +45,11 @@ def about():
     return flask.render_template('about.html', title = 'About')
 
 
-@app.route('/add', methods=["POST"])
-def add():
-    todo = Todo(text = request.form['todoitem'], complete = False)
-    db.session.add(todo)
-    db.session.commit()
+# @app.route('/add', methods=["POST"])
+# def add():
+    
 
-    return flask.redirect(flask.url_for('home'))
+#     return flask.redirect(flask.url_for('home'))
 
 
-@app.route('/register', methods=['GET', "POST"])
-def register():
-    form = forms.RegistrationForm()
-    if form.validate_on_submit():
-        flask.flash(f'Account created for {form.username.data}!', 'success')
-        return flask.redirect(flask.url_for('home'))
-    return flask.render_template('register.html', title = 'Register', form = form)
 
-
-@app.route('/login',  methods=['GET', "POST"])
-def login():
-    form = forms.LoginForm()
-    if form.validate_on_submit():
-        if form.email.data == 'gatok37@gmail.com' and form.password.data == 'kornfeld':
-            flask.flash("You have been logged in!!", 'success')
-            return flask.redirect(flask.url_for('home'))
-        else:
-            flask.flash("Log In Unsuccessful. Please check username and password", 'danger')
-    return flask.render_template('login.html', title = 'Login', form = form)

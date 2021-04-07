@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+
+
+<div class="content-section">
+    <form action="" method="POST">
+        {{ form.hidden_tag() }}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4">Add a task to your list </legend>
+           
+            <div class="form-group">
+                {{ form.task.label(class='form-control-label') }}
+                {% if form.task.errors %}
+                    {{ form.task(class='form-control form-control-lg is-invalid') }}
+                    <div class="invalid-feedback">
+                        {% for error in form.task.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.task(class='form-control form-control-lg') }}
+                {% endif %}
+            </div>
+            
+           
+            
+        </fieldset>
+        <div class="form-group">
+            {{ form.submit(class='btn btn-outline-info') }}
+        </div>
+
+        
+     
+    </form>
+</div>
+
+
+
+<h1>To do List</h1>
+
+
+<section class="container p-3 my-3 border">
+    
+    <ul style="text-transform: none; text-decoration: none;">
+        {% for task in tasks %}
+            <li style="font-size: large; text-transform: uppercase;">{{ task.details }} 
+                <input type="checkbox" name="my-checkbox" id="opt-in">
+                <label for="opt-in">Task completed</label>
+            </li>   
+            <a href="complete/{{task.id}}" >Erase Task</a> 
+        {% endfor %}
+    </ul>
+
+
+
+
+</section>
+
+<section class="container p-3 my-3 border">
+
+
+    <h1> <a href="/delete_all"> Delete all</h1> </a>
+</section>
+{% endblock %}

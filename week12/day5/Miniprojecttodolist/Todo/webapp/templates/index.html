@@ -44,15 +44,20 @@
 
 <section class="container p-3 my-3 border">
     
-    <ul style="text-transform: none; text-decoration: none;">
+    <ol style="text-transform: none; text-decoration: none;">
         {% for task in tasks %}
-            <li style="font-size: large; text-transform: uppercase;">{{ task.details }} 
-                <input type="checkbox" name="my-checkbox" id="opt-in">
-                <label for="opt-in">Task completed</label>
-            </li>   
-            <a href="complete/{{task.id}}" >Erase Task</a> 
+             
+            <li>  
+                <div>
+                    <input type="checkbox" name="my-checkbox" id="opt-in">
+                    <label for="opt-in">{{ task.details }}</label>
+                </div>
+                <br>
+                <a href="complete/{{task.id}}" >Erase Task</a> 
+                <hr>
+            </li> 
         {% endfor %}
-    </ul>
+    </ol>
 
 
 

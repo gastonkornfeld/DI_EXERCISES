@@ -1,0 +1,24 @@
+
+
+:checked {
+  margin-left: 25px;
+
+  border: 4px solid blue;
+  background-color: greenyellow;
+  color: red;
+}
+
+
+h1 {
+  background-color: honeydew;
+}
+
+
+li {
+  font-size: large;
+  text-transform: uppercase;
+  background-color: rosybrown;
+  color: chocolate;
+  
+}
+

@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <section class="container-fluid p-3 my-3 bg-dark text-white">
+
+        <p>Name:  {{ pet.name}} </p>
+        <p>Age:  {{ pet.age}} </p>
+        <p>Gender :  {{ pet.gender}} </p>
+        <p>Breed : {{pet.breed }}</p>
+        <p>Details : {{ pet.details }}</p>
+        
+
+        <p><strong>Price: {{ pet.price }} </strong></p>
+        <img src= "{{pet.image}}" alt="Not idea why not working here" height="200px" width="200px">
+        <br>
+        <br>
+        <a href="/add_pet/{{ pet.id }}"><button type="button" class="btn btn-success">ADD TO CART</button></a>
+        <a href="/pets"><button type="button" class="btn btn-info">Go To Store</button></a>
+
+    </section>
+
+
+{% endblock %}

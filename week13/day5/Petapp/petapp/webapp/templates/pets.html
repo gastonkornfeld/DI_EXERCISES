@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<h1>Pets list</h1>
+
+
+
+
+    {% for pet in pets %}
+
+        <section class="container-fluid p-3 my-3 bg-dark text-white">
+            <h3>Breed : {{pet.breed }}</h3>
+            <p>Name:  {{ pet.name}} </p>
+            <section class="container p-3 my-3 border">
+                <img src= "{{pet.image}}" alt="{{pet.image}}" height="200px" width="200px">  
+                <a href="/pet/{{ pet.id }}"><button type="button" class="btn btn-warning">SHOW DETAILS</button></a>
+            </section>
+        </section>
+
+    {% endfor %}
+
+
+<section class="container p-3 my-3 border">
+   
+</section>
+
+<section class="container p-3 my-3 bg-dark text-white">
+  
+</section>
+
+{% endblock %}

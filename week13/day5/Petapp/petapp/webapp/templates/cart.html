@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+    <h1>Cart</h1>
+    <table style="width:100%" class="table table-dark">
+        <tr>
+          <th>Name</th>
+          <th>Breed</th>
+          <th>Gender</th>
+          <th>Price</th>
+          <th>Delete</th>
+        </tr>
+        
+        
+     
+    {% for item in cart.pets %}
+        <tr>
+          <td>{{ item.name }}</td>
+          <td>{{ item.breed }}</td>
+          <td>{{ item.gender }}</td>
+          <td>${{ item.price }}</td>
+          <td><a href="/delete_pet/{{ item.id }}"><button type="button" class="btn btn-danger">Delete From Cart</button></a></td>
+        </tr>
+
+        
+    
+
+    {% endfor %}
+
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>Total: ${{ total }}</td>
+        <td></td>
+    </tr>
+    </table>
+
+
+    
+
+
+
+
+    <a href="/pets"><button type="button" class="btn btn-info">Go To Store</button></a>
+{% endblock %}

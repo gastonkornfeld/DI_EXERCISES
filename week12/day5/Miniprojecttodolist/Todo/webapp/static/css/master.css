@@ -10,15 +10,16 @@
 
 
 h1 {
-  background-color: honeydew;
+  background-color: black;
+  color: white;
 }
 
 
 li {
   font-size: large;
   text-transform: uppercase;
-  background-color: rosybrown;
-  color: chocolate;
+  background-color: salmon;
+  
   
 }
 

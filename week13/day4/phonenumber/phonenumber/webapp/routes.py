@@ -32,6 +32,12 @@ def show_phone():
 
 @app.route('/person/<phone_number>')
 def show_by_phone(phone_number):
+    all_persons = models.Person.query.all()
+    for person in all_persons:
+        if phone_number in person.phone_numbers:
+            person = models.Person.query.get(person.id)
+            return flask.render_template('by_number.html', person = person)
+    # here if doesnt have a match is gonna retrieve a fake user with this number.
     fake = Faker()
     number = models.Phonenumber(number = phone_number)
     person = models.Person(name = fake.name(), email = fake.email(), phone_numbers= [number], address = fake.address())
@@ -40,10 +46,8 @@ def show_by_phone(phone_number):
 
 @app.route('/person1/<person_name>')
 def show_by_name(person_name):
-    fake = Faker()
-    number = models.Phonenumber(number = fake.phone_number())
-    person = models.Person(name = person_name, email = fake.email(), phone_numbers= [number], address = fake.address())
-    return flask.render_template('by_number.html', person = person)
+    person = models.Person.query.filter_by(name=person_name).first()
+    return flask.render_template('by_name.html', person = person)
 
 
 

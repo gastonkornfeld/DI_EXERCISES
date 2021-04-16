@@ -3,13 +3,21 @@
 {% block content %}
 
     <section class="container-fluid p-3 my-3 bg-dark text-white">
-        <p>Name: {{ person.name }}</p>
-        <p>Email: {{ person.email }}</p>
-        Numbers:
-        {% for number in person.phone_numbers %}
-            <span>{{ number.number }}  </span><br>
-        {% endfor %}
-        <br>
-        <p>Address: {{ person.address }}</p>
+        <h1>Your search have this result:</h1>
+       
     </section>
+    {% if person != None %}
+        <section class="container-fluid p-3 my-3 bg-dark text-white">
+            <p>Name: {{ person.name }}</p>
+            <p>Email: {{ person.email }}</p>
+            Numbers:
+            {% for number in person.phone_numbers %}
+                <span>{{ number.number }}  </span><br>
+            {% endfor %}
+            <br>
+            <p>Address: {{ person.address }}</p>
+        </section>
+    {% else %}
+        <p>Nothing was Found with that name</p>
+    {% endif %}
 {% endblock %}

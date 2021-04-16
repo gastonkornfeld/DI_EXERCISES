@@ -1,7 +1,11 @@
 {% extends "base.html" %}
 
 {% block content %}
-
+<section class="container-fluid p-3 my-3 bg-dark text-white">
+    <h1>Your search have this result:</h1>
+   
+</section>
+{% if person != None %}
     <section class="container-fluid p-3 my-3 bg-dark text-white">
         <p>Name: {{ person.name }}</p>
         <p>Email: {{ person.email }}</p>
@@ -12,4 +16,7 @@
         <br>
         <p>Address: {{ person.address }}</p>
     </section>
+{% else %}
+    <p>Nothing was Found with that number</p>
+{% endif %}
 {% endblock %}

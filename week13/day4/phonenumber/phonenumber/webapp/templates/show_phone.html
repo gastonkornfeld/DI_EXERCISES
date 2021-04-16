@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-
+    <h1 style="text-align: center;">LIST OF PERSONS IN THE DATABASE</h1>
     {% for person in persons %}
         <section class="container-fluid p-3 my-3 bg-dark text-white">
             <p>Name: {{ person.name }}</p>

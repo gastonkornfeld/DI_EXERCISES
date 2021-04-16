@@ -25,14 +25,15 @@
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
             <a class="nav-item nav-link active" href="{{ url_for('index')}}">Home <span class="sr-only">(current)</span></a>
-            <a class="nav-item nav-link active" href="#">Phone <span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link active" href="{{ url_for('index')}}">ADD <span class="sr-only">(current)</span></a>
             <a class="nav-item nav-link active" href="#">Name <span class="sr-only">(current)</span></a>
-            <a class="nav-item nav-link active" href="{{ url_for('index')}}">About <span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link active" href="{{ url_for('show_phone')}}">All data <span class="sr-only">(current)</span></a>
         </div>
     </div>
 </nav>
 
 <div class="container">
+    
     <!-- Page-specific block -->
     {% with messages = get_flashed_messages(with_categories = true) %}
         {% if messages %}
@@ -46,7 +47,8 @@
 
     {% block content %}
     {% endblock %}
+    <p>WEEK 13 DAY 4</p>
 </div> <!-- End of container -->
-
+     
 </body>
 </html>

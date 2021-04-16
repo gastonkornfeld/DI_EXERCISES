@@ -47,11 +47,3 @@ def show_by_name(person_name):
 
 
 
-# @app.route('/add')
-# def add_info():
-#     delete = models.Person.query.get(1)
-#     db.session.delete(delete)
-#     db.session.commit()
- 
-
-    # return flask.redirect(flask.url_for('show_phone'))

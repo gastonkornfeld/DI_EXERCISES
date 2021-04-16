@@ -1,0 +1,25 @@
+
+
+:checked {
+  margin-left: 25px;
+
+  border: 4px solid blue;
+  background-color: greenyellow;
+  color: red;
+}
+
+
+h1 {
+  background-color: black;
+  color: white;
+}
+
+
+li {
+  font-size: large;
+  text-transform: uppercase;
+  background-color: salmon;
+  
+  
+}
+

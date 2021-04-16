@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    {% for person in persons %}
+        <section class="container-fluid p-3 my-3 bg-dark text-white">
+            <p>Name: {{ person.name }}</p>
+            <p>Email: {{ person.email }}</p>
+            Numbers:
+            {% for number in person.phone_numbers %}
+                <span>{{ number.number }}  </span><br>
+            {% endfor %}
+            <br>
+            <p>Address: {{ person.address }}</p>
+        </section>
+    {% endfor %}
+    
+{% endblock %}

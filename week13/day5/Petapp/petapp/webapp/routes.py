@@ -43,6 +43,7 @@ def cart():
 
     return flask.render_template('cart.html', cart = cart, total = total)
 
+# add a pet to the cart
 @app.route('/add_pet/<int:pet_id>')
 def add_pet(pet_id):
     cart = models.Cart.query.get(1)
@@ -52,6 +53,8 @@ def add_pet(pet_id):
     flask.flash(f'Added to the cart with exit', 'success')
     return flask.redirect(flask.url_for('cart'))
 
+
+# delete a pet from the cart
 @app.route('/delete_pet/<int:pet_id>')
 def delete_pet(pet_id):
     cart = models.Cart.query.get(1)

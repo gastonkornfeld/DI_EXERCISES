@@ -1,0 +1,38 @@
+
+
+{% extends "base.html" %}
+
+{% block content %}
+<h3>Showing Result by nationality: {{person.name }}</h3>
+{% if person.persons %}
+    {% for item in person.persons %} 
+    
+
+
+    <section class="container-fluid p-3 my-3 bg-dark text-white">
+        <p>Name: {{ item.name }}</p>
+        <p>Email: {{ item.email }}</p>
+        Numbers:
+        {% for number in item.phone_numbers %}
+            <span>{{ number.number }}</span>
+        <br>
+        {% endfor %}
+        <br>
+        <h6>Nationalities:</h6>
+        <br>
+        {% for nation in item.nationalities %}
+            <span style="background-color: yellowgreen;">{{ nation.name }}  </span><br>
+        {% endfor %} 
+        <br>
+        <p>Address: {{ item.address }}</p>
+    </section>
+
+
+    {% endfor %}
+
+{% else %}
+    <p>No match where found for that country</p>
+{% endif %}
+
+
+{% endblock %}

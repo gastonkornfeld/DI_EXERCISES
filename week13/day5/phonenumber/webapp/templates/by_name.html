@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <section class="container-fluid p-3 my-3 bg-dark text-white">
+        <h1>Your search have this result:</h1>
+        
+    </section>
+    {% if person != None %}
+        <h3>Showing result for name: {{ person.name }}</h3>
+        <section class="container-fluid p-3 my-3 bg-dark text-white">
+            <p style="background-color: yellowgreen;">Name: {{ person.name }}</p>
+            <p>Email: {{ person.email }}</p>
+            Numbers:
+            {% for number in person.phone_numbers %}
+                <span>{{ number.number }}  </span><br>
+            {% endfor %}
+            <br>
+            <h6>Nationalities:</h6>
+            {% for nation in person.nationalities %}
+                <span>{{ nation.name }}  </span><br>
+            {% endfor %} 
+            <br>
+            <p>Address: {{ person.address }}</p>
+        </section>
+    {% else %}
+        <p>Nothing was Found with that name</p>
+    {% endif %}
+{% endblock %}

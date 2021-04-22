@@ -3,9 +3,9 @@
 {% block content %}
 
 
-<h1>Question</h1>
+<h1>Question</h1> <span >Your score is: {{ session['user__score']}}</span>
 
-    <section class="container-fluid p-3 my-3 bg-dark text-white">
+    <section class="container-fluid p-3 my-3 bg-info text-white">
         <h3> Category  {{ random.category }} </h3>
         <h2>Question Number {{ random.id }}</h2>
         <h5><strong>  Question: </strong> {{ random.details }}</h5>
@@ -43,24 +43,9 @@
         </form>
     </div>
 
-<h1>Questions</h1>
 
 
 
-
-    {% for question in questions %}
-
-        <section class="container-fluid p-3 my-3 bg-dark text-white">
-            <h3> Category  {{ question.category }} </h3>
-            <h2>Question Number {{ question.id }}</h2>
-            <h5><strong>  Question: </strong> {{question.details }}</h5>
-            
-            <p>Correct answer gives: {{ question.correct }}</p>
-            <p>Wrong answer gives: {{ question.incorrect }}</p>
-            
-        </section>
-
-    {% endfor %}
-
+    
 
 {% endblock %}

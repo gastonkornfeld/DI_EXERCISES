@@ -2,7 +2,7 @@
 
 {% block content %}
 {% if user == 'logout' %}
-
+<section class="container-fluid p-3 my-3 bg-dark text-white">
     <div class="content-section">
         <form action="" method="POST">
             {{ form.hidden_tag() }}
@@ -46,9 +46,10 @@
             </small>
         </form>
     </div>
+</section>
 {% else %}
 
-<section class="container-fluid p-3 my-3 bg-dark text-white">
+<section class="container-fluid p-3 my-3 bg-danger text-white">
     <p>YOU ARE ALREADY LOGGED IN WITH THE NAME 
         <span style="background-color: grey; text-transform: uppercase;">{{ user }} </span>
     </p>

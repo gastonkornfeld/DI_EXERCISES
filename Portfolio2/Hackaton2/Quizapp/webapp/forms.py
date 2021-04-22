@@ -23,6 +23,11 @@ class AnswerForm(FlaskForm):
                         validators=[DataRequired(), Length(max=100)])
     submit = SubmitField('Check Answer')
 
+class CategoryForm(FlaskForm):
+    category = StringField('Which category you want to look for:',
+                        validators=[DataRequired(), Length(max=100)])
+    submit = SubmitField('Search category')
+
 
 class AddUserForm(FlaskForm):
     name = StringField('Name',

@@ -8,21 +8,53 @@
 <section class="container-fluid p-3 my-3 bg-dark text-white">
         <h3> Welcome {{ user }} To the quiz app</h3>
         <p>Your score at the moment is {{ score }} points </p>
-        <p> Keep answering questions to get to the top of the leaderboards</p>
+        <p> Keep answering questions to get to the top of the <a href="/leaderboard" style="display: inline;"> leaderboards </a></p>
 
 </section>
 
 
 <h2>Here You can find question related to the next topics:</h2>
 <section class="container-fluid p-3 my-3 bg-dark text-white">
-    <a href="#"><h4>Mathematics</h4></a>
-    <a href="#"><h4>Geography</h4></a>
-    <a href="#"><h4>Logic</h4></a>
-    <a href="#"><h4>Flask</h4></a>
-
+        <ul>
+                <li><a href="#"><h4>Mathematics</h4></a></li>
+                <li><a href="/geography"><h4>Geography</h4></a></li>
+                <li><a href="/science"><h4>Science</h4></a></li>
+                <li><a href="#"><h4>Flask</h4></a></li>
+        </ul>
 
     
     
+</section>
+<!-- the part of the category searching goes here -->
+<section class="container-fluid p-3 my-3 bg-dark text-white">
+        <div class="content-section">
+                <form action="" method="POST">
+                    {{ form.hidden_tag() }}
+                    <fieldset class="form-group">
+                        <legend class="border-bottom mb-4">Search for any category </legend>
+                       
+                        <div class="form-group">
+                            {{ form.category.label(class='form-control-label') }}
+                            {% if form.category.errors %}
+                                {{ form.category(class='form-control form-control-lg is-invalid') }}
+                                <div class="invalid-feedback">
+                                    {% for error in form.category.errors %}
+                                        <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form.category(class='form-control form-control-lg') }}
+                            {% endif %}
+                        </div>
+                    
+                    </fieldset>
+                    <div class="form-group">
+                        {{ form.submit(class='btn btn-outline-info') }}
+                    </div>
+                    
+                </form>
+        </div>
+
 </section>
 
 {% else %}

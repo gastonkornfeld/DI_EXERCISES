@@ -7,19 +7,19 @@
 {% if user %}
 <section class="container-fluid p-3 my-3 bg-dark text-white">
         <h3> Welcome {{ user }} To the quiz app</h3>
-        <p>Your score at the moment is {{ score }} points </p>
+        <p>Your score at the moment is <span style="background-color: yellowgreen; color: red;">{{ score }}</span> points </p>
         <p> Keep answering questions to get to the top of the <a href="/leaderboard" style="display: inline;"> leaderboards </a></p>
 
 </section>
 
 
-<h2>Here You can find question related to the next topics:</h2>
+<h2>Here You can find questions related to the next topics:</h2>
 <section class="container-fluid p-3 my-3 bg-dark text-white">
         <ul>
-                <li><a href="#"><h4>Mathematics</h4></a></li>
+                <li><a href="/math"><h4>Mathematics</h4></a></li>
                 <li><a href="/geography"><h4>Geography</h4></a></li>
                 <li><a href="/science"><h4>Science</h4></a></li>
-                <li><a href="#"><h4>Flask</h4></a></li>
+                <li><a href="/category/literature"><h4>Literature</h4></a></li>
         </ul>
 
     

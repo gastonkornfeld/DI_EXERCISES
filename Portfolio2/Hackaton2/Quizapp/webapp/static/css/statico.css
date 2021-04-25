@@ -32,3 +32,16 @@ p {
 a {
     display: block;
 }
+
+li {
+    text-transform: uppercase;
+    border-bottom: 2px solid orange;
+    text-align: center;
+    padding-top: 6px;
+    list-style-type: disclosure-closed;
+}
+
+small {
+    text-align: center;
+    text-transform: uppercase;
+}

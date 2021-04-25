@@ -16,10 +16,11 @@ def init():
 
 @app.route("/index", methods = ['GET', 'POST'])
 def index():
-    
-    # a = models.Question.query.get(415)
-    # db.session.delete(a)
-    # db.session.commit()
+    # for i in range(1,7):
+            
+    #     a = models.User.query.get(i)
+    #     a.score = 1
+    #     db.session.commit()
     # if the user is logged retrieve it to the template if not a general template
     if flask.session['user__name'] != 'logout':
         active_user = flask.session['user__name']
@@ -79,7 +80,7 @@ def category(category):
                 db.session.commit()
                 return flask.redirect(flask.url_for('category', category = category))
             else:
-                flask.flash("incorrect answer, the correct answer is " + models.Question.query.get(flask.session['id_question']).answer, 'danger')
+                flask.flash("Incorrect. The correct answer is " + models.Question.query.get(flask.session['id_question']).answer, 'danger')
                 flask.session['user__score'] = int(flask.session['user__score']) + to_chek.incorrect
                 user = models.User.query.filter_by(name = flask.session['user__name']).first()
                 user.score = flask.session['user__score']
@@ -199,13 +200,37 @@ def science():
     else:
         return flask.render_template('science.html')
 
+@app.route('/logic')
+def logic():
+   
+
+    if flask.session['user__name'] != 'logout':
+        active_user = flask.session['user__name']
+        score = flask.session['user__score']
+        
+        return flask.render_template('logic.html', user = active_user, score = score) 
+    else:
+        return flask.render_template('logic.html')
+
+@app.route('/math')
+def math():
+   
+
+    if flask.session['user__name'] != 'logout':
+        active_user = flask.session['user__name']
+        score = flask.session['user__score']
+        
+        return flask.render_template('math.html', user = active_user, score = score) 
+    else:
+        return flask.render_template('math.html')
+
 
 
 @app.route('/leaderboard')
 def score():
     
     
-    all_users = models.User.query.order_by(models.User.id)
+    all_users = models.User.query.order_by(models.User.score)
     # this logged user is used to retrieve the info in the index template after log in
     logged_user = models.User.query.filter_by(name = flask.session['user__name']).first()
 

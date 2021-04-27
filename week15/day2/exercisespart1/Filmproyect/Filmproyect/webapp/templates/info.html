@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<section class="container-fluid p-3 my-3 bg-dark text-white">
+    
+    <h1>All the info</h1>
+    <table style="width:100%" class="table table-success">
+      <tr>
+        <th>Country name</th>
+        <th>Movies created</th>
+      </tr>
+          
+          
+       
+      {% for country in countries %}
+          
+              <tr style="background-color: greenyellow;">
+                  <td>{{ country.name }}</td>
+                  {% for movie in country.movies_created %}
+                  <td>{{ movie.title }}
+                  {{ movie.year }}</td>
+                  {% endfor %}
+                  
+            
+          
+      {% endfor %}    
+    </table>
+  
+  </section>
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}Cryptos{% endblock %}
+
+
+{% block content%}
+
+<h1 align="center"> Details {{ value['name'] }}</h1>
+
+
+
+
+
+
+
+
+
+
+<div class="card text-center bg-warning">
+  <div class="card-header">
+     <img src="{{ details['logo'] }}" alt="Logo"> Id : {{ details['id']}} 
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">{{ details['name']}}</h5>
+    <p class="card-text"> {{ details['description']}}</p>
+    <a href="/add-crypto/{{ details['id'] }}" class="btn btn-primary bg-success">Follow in market</a>
+  </div>
+  <div class="card-footer text-muted">
+    Go to Website: <a href="{{ details['urls']['website'][0] }}">{{ details['urls']['website'][0] }}</a>
+  </div>
+</div>
+
+<br>
+<br>
+
+
+<a href="/cryptos"><button type="button" class="btn btn-success btn-lg btn-block">Go Back</button></a>
+
+
+
+{% endblock %}

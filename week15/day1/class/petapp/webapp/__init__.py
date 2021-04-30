@@ -8,6 +8,8 @@ import os
 
 app = flask.Flask(__name__)
 
+
+
 # In case you have: "A secret key is required to use..."
 app.config["SECRET_KEY"] = "1e447e934b371d2826cb841141b47703"
 basedir = os.path.abspath(os.path.dirname(__file__))

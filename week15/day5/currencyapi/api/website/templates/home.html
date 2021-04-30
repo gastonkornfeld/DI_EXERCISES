@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block title %}HOME{% endblock %}
+
+
+{% block content%}
+<h1>WELCOME USER {{ user.username }}</h1>
+
+
+<h2>Following kryptos</h2>
+{% for crypto in user.cryptos %}
+
+    <div class="card text-center ">
+        <div class="card-header text-white bg-danger">
+            {{ crypto.name }} ({{ crypto.symbol }}) ID ({{ crypto.id }})
+        </div>
+        <div class="card-body text-white bg-info">
+        <h5 class="card-title ">SLUG: {{ crypto.slug }}</h5>
+        <p class="card-text">Firts appearence: {{ crypto.first_historical_data }} <br>
+            Last appearence: {{ crypto.last_historical_data }}
+        </p>
+        <a href="#" class="btn btn-primary">Delete</a>
+        {% if crypto.is_active == 1 %}
+        </div>
+            STATUS IN MARKET: ACTIVE
+            
+            
+        <div class="card-footer  text-white bg-success">
+        
+        {% else %}
+        </div>
+            STATUS IN MARKET: ACTIVE
+        <div class="card-footer text-muted text-white bg-success ">
+        {% endif %}
+        
+        Price: $ {{ crypto.price }}
+        </div>
+    </div>
+<br>
+<hr>
+<br>
+
+    
+{% endfor %}
+
+{% endblock %}

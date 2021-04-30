@@ -1,5 +1,6 @@
 import flask
 
+
 from . import app, filters
 from . import models
 from . import db

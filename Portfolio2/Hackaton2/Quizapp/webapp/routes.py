@@ -16,11 +16,9 @@ def init():
 
 @app.route("/index", methods = ['GET', 'POST'])
 def index():
-    # for i in range(1,7):
+    
             
-    #     a = models.User.query.get(i)
-    #     a.score = 1
-    #     db.session.commit()
+  
     # if the user is logged retrieve it to the template if not a general template
     if flask.session['user__name'] != 'logout':
         active_user = flask.session['user__name']

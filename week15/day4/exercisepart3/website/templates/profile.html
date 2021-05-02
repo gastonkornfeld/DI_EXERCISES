@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% include '/partials/navbar.html' %}
+{% block content %}
+
+
+
+
+
+
+<h1>Name : {{ user.name }}</h1>
+<h2> Status {{ user.status }}</h2>
+<div class="card" style="width: 38rem;">
+    <div class="card-body">
+      <h5 class="card-title"> Username: {{ user.username}} id({{ user.id }}) </h5>
+      <h6 class="card-subtitle mb-2 text-muted"> Email {{ user.email }} </h6>
+      <p class="card-text"> In this section you can see your favorites movies and friends</p>
+      <a href="#" class="card-link">Favorites</a>
+      <a href="#" class="card-link">Friends</a>
+    </div>
+  </div>
+
+
+
+
+{% endblock %}

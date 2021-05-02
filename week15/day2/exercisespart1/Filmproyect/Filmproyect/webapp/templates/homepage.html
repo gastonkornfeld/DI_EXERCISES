@@ -1,53 +1,15 @@
 {% extends "base.html" %}
 
-{% include '/partials/navbar.html' %}
-
 {% block content %}
 
+
+<h1>WELCOME TO THE MOVIES APP</h1>
+
+
 <section class="container-fluid p-3 my-3 bg-dark text-white">
+    <a href="/movies">CHEK OUT OUR MOVIES</a>
+        
     
-    <h1>Movies Releasead</h1>
-    <table style="width:100%" class="table table-info">
-        <tr>
-            <th>Film name</th>
-            <th>Releases in </th>
-            <th>Created in </th>
-            <th>Categories</th>
-            <th>Directors</th>
-        </tr>
-          
-          
-       
-    {% for i in range(leng) %}
-          
-        <tr style="background-color: mediumseagreen;">
-            <td>{{ films[i].title }}</td>
-            <td>{{ films[i].year }}</td>
-            
-            <td>{{ countries[i].name }}</td>
-            
-            <td>
-                <ul>
-                    {% for category in films[i].categories %}
-                    <li>{{ category.name }}</li>
-                    {% endfor %}
-                </ul>
-            </td>
-            
-            <td>
-                <ul>
-                    {% for director in films[i].directors %}
-                    <li>Director name: {{ director.first_name }} <br>
-                        {{ director.last_name}} </li>
-                    {% endfor %}
-                </ul>
-            </td>
-        </tr>
-            
-          
-    {% endfor %}    
-    </table>
-  
-  </section>
+</section>
 
 {% endblock %}

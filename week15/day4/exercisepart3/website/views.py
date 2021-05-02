@@ -1,20 +1,30 @@
-import flask
 
-from . import app, funct, forms
-from . import models
+from flask import Blueprint, render_template, request, flash, jsonify, redirect, url_for
+from flask_login import login_required, current_user
+from . import models, forms
 from . import db
+import json
 
-@app.route("/")
-def index():
+views = Blueprint('views', __name__)
+
+
+
+
+
+
+@views.route("/")
+@login_required
+def home():
     # movie = models.Film.query.get(5)
     # db.session.delete(movie)
     # db.session.commit()
     
 
-    return flask.render_template('homepage.html')
+    return render_template('homepage.html', user = current_user)
 
 
-@app.route("/movies")
+@views.route("/movies")
+@login_required
 def movies():
     directors = models.Director.query.all()
     films = models.Film.query.all()
@@ -24,23 +34,25 @@ def movies():
     categories = models.Category.query.all()
     lenght = len(list(films)) # need this variable to make a range loop for the movies in the render
     
-    return flask.render_template('movies.html', films = films, countries = countries, leng = lenght)
+    return render_template('movies.html', films = films, countries = countries, leng = lenght, user=current_user)
 
 
-@app.route("/info")
+@views.route("/info")
+@login_required
 def info():
     directors = models.Director.query.all()
     films = models.Film.query.all()
     countries = models.Country.query.all()
     categories = models.Category.query.all()
-    return flask.render_template('info.html' ,directors = directors, films= films, countries = countries)
+    return render_template('info.html' ,directors = directors, films= films, countries = countries, user=current_user)
 
-@app.route('/addfilm', methods = ['GET', 'POST'])
+@views.route('/addfilm', methods = ['GET', 'POST'])
+@login_required
 def addFilm():
     # retrieve the data from the form
     form = forms.AddFilmForm()
     films = models.Film.query.all()
-    if flask.request.method == 'POST':
+    if request.method == 'POST':
         if form.validate_on_submit():
             title = form.name.data
             year = form.year.data
@@ -57,8 +69,8 @@ def addFilm():
                     new_Director = models.Director(first_name = dname, last_name = dlast_name)
                     db.session.add(new_Director)
             else:
-                flask.flash('You need to put the director name followed by "," and the last name', 'danger')
-                return flask.redirect(flask.url_for('addFilm'))
+                flash('You need to put the director name followed by "," and the last name', 'danger')
+                return redirect(url_for('addFilm'))
             for category in categories:
                 if models.Category.query.filter_by(name = category).first() == None:
                     new_category = models.Category(name = category) #cheking that every category is not created
@@ -88,16 +100,18 @@ def addFilm():
                 category.films_in.append(new_film) #put it in the categories film list
                 new_film.categories.append(category) #add the category to the film
             db.session.commit()
-            return flask.redirect(flask.url_for('addFilm'))
+            flash('Film Added to the database', 'success')
+            return redirect(url_for('views.addFilm'))
     
 
-    return flask.render_template('addfilm.html', form = form, films = films)
+    return render_template('addfilm.html', form = form, films = films, user=current_user)
 
-@app.route('/add_director', methods = ['GET', 'POST'])
+@views.route('/add_director', methods = ['GET', 'POST'])
+@login_required
 def add_director():
     form = forms.AddDirectorForm()
     directors = models.Director.query.all()
-    if flask.request.method == 'POST':
+    if request.method == 'POST':
         if form.validate_on_submit():
             name = form.name.data
             last_name = form.last_name.data
@@ -108,11 +122,24 @@ def add_director():
                 db.session.add(new_Director)
                 # add the film now
                 db.session.commit()
-                return flask.redirect(flask.url_for('add_director'))
+                return redirect(url_for('views.add_director'))
             else:
                 # tell the user the director already exist in the database
-                flask.flash('Director already founded in database', 'info')
-                return flask.redirect(flask.url_for('add_director'))
+                flash('Director already founded in database', 'info')
+                return redirect(url_for('views.add_director'))
     
-    return flask.render_template('add_director.html', form = form, directors = directors)
+    return render_template('add_director.html', form = form, directors = directors, user=current_user)
 
+
+
+
+
+
+
+@views.route("/profile")
+@login_required
+def profile():
+    
+    
+
+    return render_template('profile.html', user = current_user)

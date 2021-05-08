@@ -1,0 +1,89 @@
+
+
+
+
+
+
+{% extends "base.html" %}
+{% include '/partials/navbar.html' %}
+{% block content %}
+
+
+<section class="container-fluid p-3 my-3 bg-dark text-white">
+    
+    <h1>Points Leaders</h1>
+    <table style="width:100%" class="table table-info">
+        <tr>
+            <th> Name </th>
+            <th> User Profile </th>
+            <th> Status </th>
+            <th> Points </th>
+            <th> Username </th>
+        </tr>
+          
+          
+       
+    {% for user in users %}
+          
+        <tr style="background-color: mediumseagreen;">
+            <td>{{ user.name }}</td>
+            <td>{{ user.prof_type }}</td>
+            
+            <td>{{ user.status }}</td>
+            
+            <td>
+                {{ user.points }}
+            </td>
+            
+            <td>
+                <a href="/profile/{{ user.id }}">{{ user.username }}</a>
+            </td>
+        </tr>
+            
+          
+    {% endfor %}    
+    </table>
+  
+  </section>
+
+
+
+
+  <section class="container-fluid p-3 my-3 bg-dark text-white">
+    
+    <h1>Futucoins Leaders</h1>
+    <table style="width:100%" class="table table-info">
+        <tr>
+            <th>User name </th>
+            <th> User Profile </th>
+            <th> Status </th>
+            <th> Futucoins </th>
+            <th>Username</th>
+        </tr>
+          
+          
+       
+    {% for user1 in users1 %}
+          
+        <tr style="background-color: mediumseagreen;">
+            <td>{{ user1.name }}</td>
+            <td>{{ user1.prof_type }}</td>
+            
+            <td>{{ user1.status }}</td>
+            
+            <td>
+                {{ user1.coins }}
+            </td>
+            
+            <td>
+                <a href="/profile/{{ user1.id }}">{{ user1.username }}</a>
+            </td>
+        </tr>
+            
+          
+    {% endfor %}    
+    </table>
+  
+  </section>
+
+{% endblock %}

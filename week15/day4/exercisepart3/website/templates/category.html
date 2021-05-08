@@ -1,0 +1,56 @@
+
+
+
+{% extends "base.html" %}
+
+{% include '/partials/navbar.html' %}
+
+{% block content %}
+
+<section class="container-fluid p-3 my-3 bg-dark text-white">
+    
+    <h1>Movies Releasead</h1>
+    <table style="width:100%" class="table table-info">
+        <tr>
+            <th>Film name</th>
+            <th>Releases in </th>
+            <th>Created in </th>
+            <th>Categories</th>
+            <th>Directors</th>
+        </tr>
+          
+          
+       
+    {% for movie in movies %}
+          
+        <tr style="background-color: mediumseagreen;">
+            <td>{{ movie.title }}</td>
+            <td>{{ movie.year }}</td>
+            
+            <td>{{ movie.created_in }}</td>
+            
+            <td>
+                <ul>
+                    {% for category in movie.categories %}
+                    <li>{{ category.name }}</li>
+                    {% endfor %}
+                </ul>
+            </td>
+            
+            <td>
+                <ul>
+                    {% for director in movie.directors %}
+                    <li>Director name: {{ director.first_name }} <br>
+                        {{ director.last_name}} </li>
+                    {% endfor %}
+                </ul>
+            </td>
+        </tr>
+            
+          
+    {% endfor %}    
+    </table>
+  
+  </section>
+
+{% endblock %}

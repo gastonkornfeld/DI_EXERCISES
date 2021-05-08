@@ -1,0 +1,19 @@
+
+
+
+
+
+
+p {
+    text-transform: uppercase;
+    font-family: 'Courier New', Courier, monospace;
+    
+    margin: 5px;
+    padding: 5px;
+
+}
+
+
+span {
+    background-color: green;
+}

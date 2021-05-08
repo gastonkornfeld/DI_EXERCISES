@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% include '/partials/navbar.html' %}
+
+{% block content %}
+
+<section class="container-fluid p-3 my-3 bg-dark text-white">
+    
+    <h1>Thread opened by {{ user.name }}, username: {{ user.username }}</h1>
+    
+
+    <h1> Thread : {{ thread.thread_name }}</h1>
+</section>
+
+    
+        {% for message in thread.messages %}
+        <section class="container-fluid p-3 my-3 bg-dark text-white">
+            
+               <h6> Message by: <a href="/profile/{{ message.message_owner }}">{{ User.query.get(message.message_owner).name }}</a> </h6>
+            
+ 
+            <p> date: {{ message.date_of_creation }}</p>
+            <p>message: {{ message.content }}</p>
+        </section>
+        {% endfor %}
+   
+
+
+    <section class="container-fluid p-3 my-3 bg-dark text-white">
+        <div class="content-section">
+            <form action="" method="POST">
+                {{ form.hidden_tag() }}
+                <fieldset class="form-group">
+                    <legend class="border-bottom mb-4">Comment in the thread </legend>
+                    <div class="form-group">
+                        {{ form.name.label(class='form-control-label') }}
+        
+                        {% if form.name.errors %}
+                            {{ form.name(class='form-control form-control-lg is-invalid') }}
+                            <div class="invalid-feedback">
+                                {% for error in form.name.errors %}
+                                    <span>{{ error }}</span>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            {{ form.name(class='form-control form-control-lg') }}
+                        {% endif %}
+                    </div>
+                </fieldset>
+                <div class="form-group">
+                    {{ form.submit(class='btn btn-outline-info') }}
+                </div>
+            </form>
+        </div>
+        
+    </section>
+
+{% endblock %}

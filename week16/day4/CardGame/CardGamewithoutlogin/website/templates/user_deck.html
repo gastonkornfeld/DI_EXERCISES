@@ -1,0 +1,127 @@
+{% extends "base.html" %}
+{% include '/partials/navbar.html' %}
+{% block content %}
+
+
+{% if user.id == user_logged.id %}
+
+    {% if user_logged.deck_of_cards == None %}
+
+        <h1>Welcome</h1>
+        <p>Here you can get your first set of 20 cards push the button for it</p>
+        <p>This will take a few minutes to load</p>
+        <a href="/get-deck"><button>Get Your deck</button></a>
+
+    {% else %}
+        <h1> Deck of cards</h1>
+
+    {% endif %}
+
+    <section class="container-fluid p-3 my-3 bg-dark text-white">
+
+
+
+    <p> Here you can add cards to the market. once you put a card in the market you are not allowed to take it back until get sell. </p>
+    <p> Buying cards give you the cards points. </p>
+    <p> You will get the 90 % of the value of the card when you sell it. </p>
+    <p> Now you have <span>{{ user_logged.points }}</span> points and <span>{{ user_logged.coins}}</span> Futucoins to spend. </p>
+
+    <a href="/leaderboard" class="btn btn-primary">Leaderboars page</a>
+
+    <h1>List of cards</h1>
+    {% for card in deck.cards_on_deck %}
+
+        {% if card.rarity == 'COMMON'%}
+            <img style="float: left; width: 300px; height: 320px; background-color: white;" src="{{ card.url }}" class="card-img-top" alt="...">
+        {% elif card.rarity == 'RARE'%}
+            <img style="float: left; width: 300px; height: 320px; background-color: white; border: 6px solid turquoise;" src="{{ card.url }}" class="card-img-top" alt="...">
+        {% elif card.rarity == 'EPIC'%}
+            <img style="float: left; width: 300px; height: 320px; background-color: white; border: 6px solid violet;" src="{{ card.url }}" class="card-img-top" alt="...">
+        {% elif card.rarity == 'LEGENDARY'%}
+            <img style="float: left; width: 300px; height: 320px; background-color: white; border: 6px solid orange;" src="{{ card.url }}" class="card-img-top" alt="...">
+        {% endif %}
+        
+            <div class="card" style="width: 44rem; height: 22rem;">
+                
+                <div class="card-body text-dark">
+                <h5 class="card-title"> Name: {{ card.character_name }} ({{ card.id}})</h5>
+                
+                <p class="card-text">
+                    Specie/s: {{ card.specie }} <br>
+                    Age : {{ card.age }} <br>
+                    Planet : {{ card.planet }} <br>
+                    Profession : {{ card.profession }} <br>
+                    <strong> Card Rarity :  {{ card.rarity }} </strong> <br> 
+                    Price : {{ card.price }} <br>
+                    Points : {{ card.points }}
+                    
+                </p>
+                <a href="/trade/{{ card.id }}" class="btn btn-primary">Add To Market  </a>
+            
+                </div>
+            </div>
+
+        
+
+
+
+
+    {% endfor %}
+    </section>
+<!-- if the deck is not the one of the user logged will display it without the add to market button -->
+{% else %}
+
+<section class="container-fluid p-3 my-3 bg-dark text-white">
+
+
+
+   
+
+    <a href="/leaderboard" class="btn btn-primary">Leaderboars page</a>
+
+    <h1>List of cards user {{ user.username}}</h1>
+    {% for card in deck.cards_on_deck %}
+
+        {% if card.rarity == 'COMMON'%}
+            <img style="float: left; width: 300px; height: 320px; background-color: white;" src="{{ card.url }}" class="card-img-top" alt="...">
+        {% elif card.rarity == 'RARE'%}
+            <img style="float: left; width: 300px; height: 320px; background-color: white; border: 6px solid turquoise;" src="{{ card.url }}" class="card-img-top" alt="...">
+        {% elif card.rarity == 'EPIC'%}
+            <img style="float: left; width: 300px; height: 320px; background-color: white; border: 6px solid violet;" src="{{ card.url }}" class="card-img-top" alt="...">
+        {% elif card.rarity == 'LEGENDARY'%}
+            <img style="float: left; width: 300px; height: 320px; background-color: white; border: 6px solid orange;" src="{{ card.url }}" class="card-img-top" alt="...">
+        {% endif %}
+        
+            <div class="card" style="width: 44rem; height: 22rem;">
+                
+                <div class="card-body text-dark">
+                <h5 class="card-title"> Name: {{ card.character_name }} ({{ card.id}})</h5>
+                
+                <p class="card-text">
+                    Specie/s: {{ card.specie }} <br>
+                    Age : {{ card.age }} <br>
+                    Planet : {{ card.planet }} <br>
+                    Profession : {{ card.profession }} <br>
+                    <strong> Card Rarity :  {{ card.rarity }} </strong> <br> 
+                    Price : {{ card.price }} <br>
+                    Points : {{ card.points }}
+                    
+                </p>
+                
+            
+                </div>
+            </div>
+
+        
+
+
+
+
+    {% endfor %}
+    </section>
+
+{% endif %}
+
+
+
+{% endblock %}

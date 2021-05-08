@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% include '/partials/navbar.html' %}
+{% block content %}
+
+
+
+<div class="content-section">
+    <form action="" method="POST">
+        {{ form.hidden_tag() }}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4">Create a new Thread in the chat </legend>
+            <div class="form-group">
+                {{ form.name.label(class='form-control-label') }}
+
+                {% if form.name.errors %}
+                    {{ form.name(class='form-control form-control-lg is-invalid') }}
+                    <div class="invalid-feedback">
+                        {% for error in form.name.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.name(class='form-control form-control-lg') }}
+                {% endif %}
+            </div>
+        </fieldset>
+        <div class="form-group">
+            {{ form.submit(class='btn btn-outline-info') }}
+        </div>
+    </form>
+</div>
+
+
+
+<h1>List of threads already created</h1>
+
+
+{% for thread in threads %}
+    <section class="container-fluid p-3 my-3 bg-dark text-white">
+        <h3> <strong>THREAD TITLE: </strong>{{thread.thread_name}}</h3>
+        <h4>Thread started by: {{ User.query.get(thread.thread_starter).name }}</h4>
+        <p>Date of creation: {{ thread.date_of_creation }}</p>
+        <p>Thread number : {{ thread.id }}</p>
+       
+        <a href="/thread/{{thread.id}}" class="btn btn-primary">Go to thread </a>
+    </section>
+{% endfor %}
+
+
+
+{% endblock %}

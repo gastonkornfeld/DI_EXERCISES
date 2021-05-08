@@ -143,3 +143,34 @@ def profile():
     
 
     return render_template('profile.html', user = current_user)
+
+
+@views.route("/category-search", methods = ["GET", "POST"])
+@login_required
+def category_search():
+    form = forms.SearchCategoryForm()
+    if form.validate_on_submit():
+        category = form.name.data
+        return redirect(url_for('views.category', category = category))
+    
+    
+    
+
+    return render_template('category-search.html', user = current_user, form = form)
+
+
+
+@views.route("/category/<category>")
+@login_required
+def category(category):
+    
+    if models.Category.query.filter_by(name=category).first():
+        movies = models.Category.query.filter_by(name=category).first().films_in
+        return render_template('category.html', user = current_user, movies = movies)
+
+    else:
+        flash('There is no movies with that category in the database.', 'danger')
+        return redirect(url_for('views.category_search'))
+    
+
+    

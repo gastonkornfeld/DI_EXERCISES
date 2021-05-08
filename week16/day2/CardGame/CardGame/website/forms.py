@@ -16,6 +16,8 @@ class SignUpForm(FlaskForm):
                         validators=[DataRequired(), EqualTo(password1)])
     name = StringField('Complete Name',
                         validators=[DataRequired(), Length(min=2, max=20)])
+    image_url = StringField('Profile picture url',
+                        validators=[DataRequired(), Length(min=2, max=100000)])
     submit = SubmitField('Sign Up')
 
 class LoginForm(FlaskForm):
@@ -25,27 +27,16 @@ class LoginForm(FlaskForm):
                         validators=[DataRequired()])
     submit = SubmitField('Login')
 
-class AddFilmForm(FlaskForm):
 
-    name = StringField('Film Title', validators=[DataRequired()])
+
+
+class CreateThreadForm(FlaskForm):
+    name = StringField('Thread', validators=[DataRequired(), Length(min=2, max=2000)])
     
-    year = StringField('Date of release', validators=[DataRequired()])
-    created_in = StringField('Country of creation', validators=[DataRequired()])
-    categories = StringField('ADD categories separated by ","', validators=[DataRequired()])
-    director = StringField('Imput Director Name, Last name ', validators=[DataRequired()])
-    submit = SubmitField('Submit')
+    submit = SubmitField('Open Thread')
 
-
-
-class AddDirectorForm(FlaskForm):
-    name = StringField('First Name', validators=[DataRequired()])
-    last_name = StringField('Last Name', validators=[DataRequired()])
-    submit = SubmitField('Submit')
-
-
-
-class SearchCategoryForm(FlaskForm):
-    name = StringField('Category', validators=[DataRequired()])
+class CreateMessageForm(FlaskForm):
+    name = StringField('Message Content', validators=[DataRequired(), Length(min=2, max=2000)])
     
-    submit = SubmitField('Search')
+    submit = SubmitField('Add message to the thread')
 

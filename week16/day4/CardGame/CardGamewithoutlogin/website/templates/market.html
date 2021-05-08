@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% include '/partials/navbar.html' %}
+{% block content %}
+
+{% if user_logged.deck_of_cards%}
+
+    <section class="container-fluid p-3 my-3 bg-dark text-white">
+        <h1> Welcome to the cards market</h1>
+        <p> You have <span>{{ user_logged.coins}}</span> Futucoins to spend in the market </p>
+        <p> hey {{ user_logged.name}} here the list of cards you can buy from other players. </p>
+        <a href="/deck/{{ user_logged.id }}">CHEK OUT YOUR DECK </a>
+    </section>
+    <section class="container-fluid p-3 my-3 bg-dark text-white">
+    <h1>List of cards on trade</h1>
+    {% for transac in transactions %}
+       
+
+        {% set card = Card.query.get(transac.card_offered) %}
+        {% set user = User.query.get(transac.transaction_creater) %}
+        {% if user_logged.email != user.email %}
+
+            {% if card.rarity == 'COMMON'%}
+                <img style="float: left; width: 400px; height: 380px; background-color: white;" src="{{ card.url }}" class="card-img-top" alt="...">
+            {% elif card.rarity == 'RARE'%}
+                <img style="float: left; width: 400px; height: 380px; background-color: white; border: 6px solid turquoise;" src="{{ card.url }}" class="card-img-top" alt="...">
+            {% elif card.rarity == 'EPIC'%}
+                <img style="float: left; width: 400px; height: 380px; background-color: white; border: 6px solid violet;" src="{{ card.url }}" class="card-img-top" alt="...">
+            {% elif card.rarity == 'LEGENDARY'%}
+                <img style="float: left; width: 400px; height: 380px; background-color: white; border: 6px solid orange;" src="{{ card.url }}" class="card-img-top" alt="...">
+            {% endif %}
+            
+                <div class="card" style="width: 32rem; height: 25rem; margin-bottom: 10px;">
+                    
+                    <div class="card-body text-dark">
+                    <h5 class="card-title"> Name: {{ card.character_name }} -  (CARD-ID : {{ card.id }})</h5>
+                        
+                    <p class="card-text">
+                        <h2>Owner : <a href="profile/{{ user.id }}"> {{ user.username }} </a></h2> 
+                        Specie/s: {{ card.specie }} <br>
+                        Age : {{ card.age }} <br>
+                        Planet : {{ card.planet }} <br>
+                        Profession : {{ card.profession }} <br>
+                        <strong> Card Rarity :  {{ card.rarity }} </strong> <br> 
+                        <strong> Price : {{ card.price }} </strong> <br>
+                        <strong>Points : {{ card.points }} </strong>
+                        
+                    </p>
+                    <a href="/complete_transaction/{{ transac.id }}" class="btn btn-primary">Buy card for {{ card.price }}</a>
+                
+                    </div>
+                </div>
+        {% endif %}
+        
+
+
+
+
+    {% endfor %}
+    </section>
+
+
+{% else %}
+
+<h1> You need to get you deck to start betting in the market</h1>
+<a href="/deck/{{ user_logged.id }}">CHEK OUT YOUR DECK </a>
+
+{% endif %}
+{% endblock %}

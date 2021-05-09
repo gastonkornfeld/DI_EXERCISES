@@ -18,6 +18,12 @@ class Message(db.Model):
     date_of_creation = db.Column(db.DateTime, default = datetime.datetime.now)
 
 
+    def deletee(self):
+        message = Message.query.get(self.id)
+        db.session.delete(message)
+        db.session.commit()
+
+
 class Thread(db.Model):
     id = db.Column(db.Integer(), primary_key=True)
     thread_name = db.Column(db.String(128), nullable=False)
@@ -35,6 +41,11 @@ class Thread(db.Model):
         message = Message(content = message_content, message_owner = self.thread_starter, thread_id = self.id)
         db.session.add(message)
         self.messages.append(message)
+        db.session.commit()
+
+    def deletee(self):
+        thread = Thread.query.get(self.id)
+        db.session.delete(thread)
         db.session.commit()
         
     
@@ -93,7 +104,9 @@ class User(db.Model, UserMixin):
             deck.cards_on_deck.append(card)
         self.deck_of_cards = deck
         db.session.commit()
-        
+    
+    def count_cards_user(self):
+        return self.deck_of_cards.count_cards()
 
 
 
@@ -166,6 +179,9 @@ class Deckofcards(db.Model):
         self.cards_on_deck.append(card)
         db.session.commit()
 
+    def count_cards(self):
+        return len(list(self.cards_on_deck))
+
 
 
     
@@ -186,5 +202,30 @@ class Transaction(db.Model):
         db.session.commit()
 
 
-    
+
+def get_user_with_more_cards():
+    """
+    The point of this function is to retrieve the user with more cards.
+    is taking all the users, finding the one with more cards appending all the users count_cards_user function created in the user model and in
+    the deck model in a list, retrieving the max value and then retrieving a list with all the users with this max values
+    Return a list of users id.
+
+
+    """
+    users = User.query.all()
+    list_of_amount_of_cards = []
+    # get all the users put his amount of cards in a list, chek the max of the list and then retrieve the users wuth that amount of cards.
+    for i in range(len(list(users))):
+        amount_of_cards = users[i].count_cards_user()
+        list_of_amount_of_cards.append(amount_of_cards)
+
+    max_value = max(list_of_amount_of_cards)
+
+
+    for i in range(len(list(users))):
+        users_with_max_cards = []
+        if users[i].count_cards_user() == max_value:
+            user_id = users[i].id
+            users.append(user_id) 
+    return users_with_max_cards
 

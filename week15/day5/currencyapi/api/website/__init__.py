@@ -32,8 +32,8 @@ def create_app():
     mail_manager.init_app(app)
 
     @login_manager.user_loader
-    def load_user(id):
-        return User.query.get(int(id))
+    def user_loader(id):
+        return User.query.get(id)
 
     return app
 

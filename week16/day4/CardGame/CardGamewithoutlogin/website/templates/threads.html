@@ -2,7 +2,9 @@
 {% include '/partials/navbar.html' %}
 {% block content %}
 
-
+{% if user.status == 'admin' %}
+    <p>Hello you been choose to be an admin user, so you are able to delete the content that is not proper. Thanks</p>
+{% endif %}
 
 <div class="content-section">
     <form action="" method="POST">
@@ -43,6 +45,9 @@
         <p>Thread number : {{ thread.id }}</p>
        
         <a href="/thread/{{thread.id}}" class="btn btn-primary">Go to thread </a>
+        {% if user.status == 'admin'%}
+            <a href="/delete-thread/{{thread.id}}" class="btn btn-primary">Delete thread </a>
+        {% endif %}
     </section>
 {% endfor %}
 

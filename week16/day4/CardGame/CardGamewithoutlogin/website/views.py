@@ -8,13 +8,13 @@ from sqlalchemy import desc
 views = Blueprint('views', __name__)
 
 
-@views.route("/activate")
+@views.route("/")
 def activate():
     session['id_user_logged'] = 0
     return redirect(url_for('views.home'))
 
 
-@views.route("/")
+@views.route("/index")
 # @login_required
 def home():
     form = forms.LoginForm()
@@ -71,6 +71,9 @@ def view_thread(id):
     show all the messages inside a thread and get the user a way to add messages in the thread.
     for admin users will display also a button to delete messages and close threads 
     """
+
+    user_logged_id = int(session['id_user_logged'])
+    user_logged = models.User.query.get(user_logged_id)
     thread = models.Thread.query.get(id)
     user_starter = models.User.query.get(thread.thread_starter)
     form = forms.CreateMessageForm()
@@ -81,10 +84,35 @@ def view_thread(id):
         db.session.add(message)
         thread.messages.append(message)
         db.session.commit()
-        return render_template('thread_details.html', thread = thread, user = user_starter, form = form, User = user_model)
+        return render_template('thread_details.html', thread = thread, user = user_starter, form = form, User = user_model, user_logged = user_logged)
 
 
-    return render_template('thread_details.html', thread = thread, user = user_starter, form = form, User = user_model)
+    return render_template('thread_details.html', thread = thread, user = user_starter, form = form, User = user_model, user_logged = user_logged)
+
+
+@views.route("/delete-thread/<int:id>", methods = ['GET', 'POST'])
+def delete_thread(id):
+    """
+    This route is only available for admin usage. take the id of the thread and delete it.
+    """
+    thread = models.Thread.query.get(id)
+    thread.deletee()
+
+    return redirect(url_for('views.threads'))
+
+@views.route("/delete-message/<int:id>", methods = ['GET', 'POST'])
+def delete_message(id):
+    """
+    This route is only available for admin usage. take the id of the message and delete it.
+    """
+    
+    message = models.Message.query.get(id)
+    thread = models.Thread.query.get(message.thread_id)
+    message.deletee()
+
+
+    return redirect(url_for('views.view_thread', id = thread.id))
+
 
 
 
@@ -174,7 +202,8 @@ def complete_transaction(transaction_id):
         points = card_on_sale.points
         card_seller.get_coins(round(price*0.90,2))
         user.get_coins(-price)
-        user.get_points(points)
+        user.get_points(round(points*0.7,2))
+        card_seller.get_points(round(points*0.3,2))
         user_deck.add_card(transaction.card_offered)
         db.session.delete(transaction)
         db.session.commit()
@@ -192,7 +221,8 @@ def complete_transaction(transaction_id):
 def leaderboard():
     point_leaders = models.User.query.order_by(desc(models.User.points)).all()
     coins_leaders = models.User.query.order_by(desc(models.User.coins)).all()
-    return render_template('leaderboards.html',  users = point_leaders, users1 = coins_leaders )
+    amount_of_cards_leaders = models.get_user_with_more_cards()
+    return render_template('leaderboards.html',  users = point_leaders, users1 = coins_leaders, users2 = amount_of_cards_leaders )
 
 
- 
+

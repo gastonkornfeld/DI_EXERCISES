@@ -4,12 +4,16 @@
 
 {% block content %}
 
+{% if user_logged.status == 'admin' %}
+    <p>Hello you been choose to be an admin user, so you are able to delete the content that is not proper. Thanks</p>
+{% endif %}
+
 <section class="container-fluid p-3 my-3 bg-dark text-white">
     
     <h1>Thread opened by {{ user.name }}, username: {{ user.username }}</h1>
     
 
-    <h1> Thread : {{ thread.thread_name }}</h1>
+    <h1> Thread Topic : {{ thread.thread_name }}</h1>
 </section>
 
     
@@ -22,6 +26,9 @@
             <p> date: {{ message.date_of_creation }}</p>
             <p>message: {{ message.content }}</p>
         </section>
+            {% if user_logged.status == 'admin' %}
+                <a href="/delete-message/{{ message.id }}" class="btn btn-primary"> Delete message</a>
+            {% endif %}
         {% endfor %}
    
 
@@ -57,4 +64,6 @@
 
 
     <a href="/threads" class="btn btn-primary"> Go Back To Threads</a>
+
+
 {% endblock %}

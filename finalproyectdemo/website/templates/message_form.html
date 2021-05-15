@@ -1,0 +1,61 @@
+
+
+
+     
+<div class="content-section message-form" id="message-form">
+    <div class="center">
+        <p>¡Charlemos!
+            Si tenés dudas, me querés hacer alguna consulta o simplemente te gustaría
+        
+            contarme algo, podés escribirme completando este formulario o 
+        
+            por mail a: <a href="mailto:natikorn@gmail.com">natikorn@gmail.com</a></p>
+    </div>
+    <form action="" method="POST">
+        {{ message_form.hidden_tag() }}
+        <fieldset class="form-group">
+          <legend class="border-bottom mb-4">Please leave us a message. </legend>
+          <div class="form-group">
+              {{ message_form.name.label(class='form-control-label') }}
+  
+              {% if message_form.name.errors %}
+                  {{ message_form.name(class='form-control form-control-lg is-invalid') }}
+                  <div class="invalid-feedback">
+                      {% for error in message_form.name.errors %}
+                          <span>{{ error }}</span>
+                      {% endfor %}
+                  </div>
+              {% else %}
+                  {{ message_form.name(class='form-control form-control-lg') }}
+              {% endif %}
+          </div>
+          <div class="form-group">
+            {{ message_form.content.label(class='form-control-label') }}
+
+            {% if message_form.content.errors %}
+                {{ message_form.content(class='form-control form-control-lg is-invalid') }}
+                <div class="invalid-feedback">
+                    {% for error in message_form.content.errors %}
+                        <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+            {% else %}
+                {{ message_form.content(class='form-control form-control-lg') }}
+            {% endif %}
+        </div>
+        
+        
+  
+         
+            
+        </fieldset>
+  
+        <div class="form-group">
+            {{ message_form.submit(class='btn btn-outline-info message-form-button') }}
+        </div>
+    </form>
+  </div>
+
+
+
+  

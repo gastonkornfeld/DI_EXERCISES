@@ -1,0 +1,32 @@
+
+
+
+Ideas principales.
+
+El incio del sitio como la pagina de theyogameet.
+Blog sobre yoga
+Blog sobre comida
+
+
+Una parte con login para alumnas.
+puedo agregar una parte donde se inscriben al nesleter y le da a la nati una vista de admin con todos los emails cargados en la pagina.
+
+En el fondo de la pagina un formulario linkeado con un elemento del navbar para redirigir.
+Luego un formulario para crear un mensaje a la nati
+
+Pagina donde vende sus dietas alimentarias mensuales y sesiones de yoga mensuales y combinadas.
+
+Debe incluir un acerca de mi page.
+
+Modelos por ahora.
+
+
+yoga blog content
+food blog content
+messages content
+nesletter suscriber.
+user or alumna
+
+
+
+

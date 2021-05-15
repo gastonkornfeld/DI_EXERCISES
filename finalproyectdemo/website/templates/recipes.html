@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}CHANCHITO YOGA RECIPES {% endblock %}
+
+
+
+{% block content%}
+{% include 'navbar.html' %} 
+<div class="center">
+  <h1>Title</h1>
+  <p>Another content</p>
+</div>
+{% for recipe in recipes %}
+<div style="display: flex; justify-content: center;">
+  <div class="card mb-3" style="max-width: 1200px;">
+    <h5 class="card-title center"> <strong>NAME OF THE RECIPE: </strong> {{ recipe.name }}</h5>
+      <img class="card-img-top" style="max-width: 1200px; padding: 70px 70px 0 70px;" src="{{ recipe.image_url }}" alt="Card image cap">
+      <div class="card-body">
+        
+        <p class="card-text center"><a class="btn btn-primary btn-lg" href="/recipe/{{ recipe.id }}">Check The recipe</a></p>
+        
+        <p class="card-text"><small class="text-muted"> Creation date {{ recipe.created_at }}</small></p>
+      </div>
+  </div>
+</div>
+{% if user.email == 'natikorn@gmail.com' %}
+<a class="btn btn-primary btn-lg" href="/delete-recipe/{{ recipe.id }}">Delete the Recipe {{recipe.name}}</a>
+{% endif %}
+
+{% endfor %}
+{% include 'message_form.html' %}
+{% include 'news_form.html'%}
+{% endblock %}

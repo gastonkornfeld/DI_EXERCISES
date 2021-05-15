@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block title %}CHANCHITO YOGA BLOG{% endblock %}
+
+
+
+{% block content%}
+{% include 'navbar.html' %} 
+<header class="jumbotron header3">
+  <div class="main-jumbo-index"></div>
+    
+    
+    <div>
+      <h3 style="color: white;" class="headerjumbo center">I LOVE TO SHARE MY YOGA WHITH YOU</h3>
+    </div>
+    
+  
+    
+    
+    
+    
+  </div>
+</header>
+{% for post in posts %}
+<div class="card mb-3" style="max-width: 1200px; background-color: rgb(162, 206, 180);">
+    <h5 class="card-title center"> {{ post.title }}</h5>
+    <img class="card-img-top card-blog" src="{{ post.image_url }}" alt="Card image cap">
+    <div class="card-body">
+      
+      <p class="main-content-blog"> {{ post.main_content }}</p>
+      <p class="card-text center"><a class="btn btn-success btn-xs" href="/blog/{{ post.id }}">Enter To The Post</a></p>
+      <hr>
+      <p class="card-text center"><small> Creation date {{ post.created_at }}</small></p>
+    </div>
+  </div>
+ 
+{% if user.email == 'natikorn@gmail.com' %}
+  <p class="card-text center"><a class="btn btn-danger btn-lg" href="/delete-blog/{{ post.id }}">Delete the post {{post.title}}</a></p>
+{% endif %}
+{% endfor %}
+
+
+{% include 'message_form.html' %}
+{% include 'news_form.html'%}
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}Course {{ course.name_of_course}}{% endblock %}
+
+
+
+{% block content%}
+{% include 'navbar.html' %} 
+
+
+<div class="card mb-3 course-details">
+  <h5 style="padding: 20px; margin: 20px;" class="center"> Course {{ course.name_of_course}},  {{ course.type_of_course }}</h5>
+  <hr>
+    
+    <div class="card-body">
+      <h5> <strong>DESCRIPTION OF THE COURSE: </strong> {{ course.description }}</h5>
+      <hr>
+      
+      <p class="price">  PRICE {{ course.price }} Pesos </p>
+      <hr>
+      
+      <p class="card-text"><small> Creation date {{ course.created_at }}</small></p>
+    </div>
+</div>
+<div class="center">
+  <a class="btn btn-success btn-lg" href="/courses">Back to Courses</a> 
+</div>
+
+{% endblock %}

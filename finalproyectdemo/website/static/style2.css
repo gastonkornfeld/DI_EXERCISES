@@ -1,0 +1,280 @@
+
+
+/* general categories */
+
+
+
+body {
+    background-color: ghostwhite;
+    margin: 0
+}
+
+
+p {
+    margin: 15px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.navbar {
+    background-color: #8cabc2;
+    padding: 60px 0;
+    font-size: large;
+}
+
+a {
+    color: burlywood;    
+}
+
+/* special categories to change around the pages */
+
+.center {
+    text-align: center;
+}
+
+/* 
+div {
+    margin-top: 50px;
+    margin-bottom: 50px;
+} */
+
+.justify-c {
+    justify-content: center;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+/* here i use the bootsrapp categories for cards to change the default style */
+
+.card-title {
+    text-transform: capitalize;
+    color: lightseagreen;
+    padding: 40px;
+}
+
+
+.card-body {
+    text-align: center;
+
+}
+
+/* Here all the syles from the index page */
+
+
+.header1 {
+    background-image: url(/static/images/demo.gif);
+    
+    background-size: cover;
+    margin: 0;
+    background-attachment: fixed;
+    background-position: center;
+    
+
+}
+
+
+.icon-first-div{
+    color: black;
+}
+
+.icon-first-div:hover{
+    color: burlywood
+}
+
+
+.icon-last-div{
+    color:  rgb(198, 229, 211);
+}
+
+
+.main-jumbo-index {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: darkgreen;
+    
+}
+
+
+.bt-1-home {
+    align-self: center;
+}
+
+.second-section-home {
+    background-image: url(/static/images/about-me3.jpg);
+    
+    background-size: cover;
+    
+    margin: 0;
+    background-attachment: fixed;
+    background-position: center;
+    
+
+}
+
+.second-section-div{
+    background: rgb(177, 152, 65);
+    margin: 200px 50px 100px 50px;
+    position: relative;
+    top: 200px;
+}
+
+.second-section-second-div {
+    margin-top: 150px;
+    
+    text-align: center;
+    
+}
+
+.last-div {
+    padding: 0 40px;
+}
+
+.last-div-title {
+    padding: 40px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+
+
+
+
+/*  all the about me page styles here */
+
+
+.about-me-main-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.img-about-me {
+    align-self: center;
+    justify-self: center;
+    
+}
+
+.about-me-title{
+    font-size: 50px;
+    text-transform: uppercase;
+}
+
+
+/* Here the styles from the yoga blog page */
+
+
+.main-content-blog {
+
+    font-family: 'Courier New', Courier, monospace;
+    color: olive;
+    font-size: 20px;
+}
+
+.card-blog {
+    max-width: 1000px;
+    margin: auto;
+    background-color: rgb(162, 206, 180);
+}
+
+
+
+.header3 {
+    background-image: url(/static/images/blog1.gif);
+    background-size: cover;
+  
+    margin: 0;
+    background-attachment: fixed;
+    background-position: center;
+    
+
+}
+
+
+/* all the styles for the messages form template  */
+
+.message-form{
+    background: rgb(177, 152, 65);
+    padding: 50px;
+    color: white;
+}
+
+.message-form-button {
+    color: white;
+    border: 1px solid white;
+
+}
+
+
+.message-form-button:hover {
+    background-color: white;
+    color: rgb(177, 152, 65);
+    border: 1px solid rgb(177, 152, 65);
+}
+
+
+
+/* all the syles for the leave your mail form */
+
+
+.news-form {
+    background-color: black;
+    color: white;
+    padding: 40px 70px;
+    max-width: 800px;
+    margin: auto;
+    margin-top: 40px;
+}
+
+
+
+
+
+/* all the styles for the courses page */
+
+.header2 {
+    background-image: url(/static/images/courses.gif);
+    
+  
+    margin: 0;
+    background-attachment: fixed;
+    background-position: center;
+    
+
+}
+
+
+.courses-div {
+    max-width: 1000px;
+    margin: auto;
+    margin-bottom: 50px;
+    background-color:  rgb(198, 229, 211);
+    color: black;
+    border: 2px solid black;
+}
+
+.courses-title {
+    background-color: rgb(162, 206, 180);
+}
+
+
+.course-details {
+    max-width: 1000px;
+    margin: auto;
+    margin-top: 20px;
+    background-color: rgb(162, 206, 180);
+    border: 3px solid black;
+}
+
+
+.price {
+    background: burlywood;
+    color: white;
+    border: solid chocolate;
+    font-size: larger;
+    padding: 10px;
+}
+

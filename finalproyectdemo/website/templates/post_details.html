@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}CHANCHITO YOGA BLOG{% endblock %}
+
+
+
+{% block content%}
+{% include 'navbar.html' %} 
+<div class="center">
+  <h1>Title</h1>
+  <p>Another content</p>
+</div>
+
+<div class="card mb-3" style="max-width: 1000px;">
+    <h5 style="text-align: center; padding-top: 70px;" class="card-title"> {{ post.title }}</h5>
+    <img class="card-img-top" style="max-width: 1000px; margin: auto; " src="{{ post.image_url }}" alt="Card image cap">
+    <div class="card-body">
+      <hr>
+      <p class="card-text"><strong>{{ post.main_content}} </strong></p>
+      <hr>
+      <p class="card-text">{{ post.secondary_content }}</p>
+      
+      <p class="card-text"><small class="text-muted"> Creation date {{ post.created_at }}</small></p>
+    </div>
+  </div>
+ 
+
+  <p class="card-text"><a class="btn btn-primary btn-lg" href="/blog">Back to Blog</a></p> 
+
+{% endblock %}

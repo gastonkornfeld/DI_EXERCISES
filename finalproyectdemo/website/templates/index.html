@@ -1,0 +1,145 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+
+{% block content%}
+
+
+{% include 'navbar.html' %}
+<header class="jumbotron header1">
+  <div class="main-jumbo-index">
+    <div class="flex-column">
+      
+        <a class="icon-first-div" href="#"><i class="fab fa-instagram"></i></a>
+        <a class="icon-first-div" href="#"><i class="fab fa-youtube"></i></a>
+        <a class="icon-first-div" href="#"><i class="fab fa-facebook"></i></a>
+        
+      
+    </div>
+    
+    <div>
+      <h3 class="headerjumbo center">Disenemos tu CHANCHIRUTINA</h3>
+    </div>
+    
+  
+    <div>
+      <h1 class="center">Hola, Soy Naty!</h1>
+    </div>
+    
+    <div>
+      <p>Encontrar un tiempo para vos.
+
+        Sentirte motivada en tus prácticas de yoga
+        
+        
+        Te invito a recuperar tu bienestar, el equilibrio mental y físico con una yogui-rutina integral, que une los principios de tres disciplinas Yoga-Ayurveda-Mindfulnes.</p>
+    </div>
+    <div class="bt-1-home">
+      <a class="btn btn-success btn-xs" href="/about-me">Conoceme</a>
+    </div>
+    </div>
+  </div>
+</header>
+
+
+<div style="background-color: white;">
+
+  <h1 class="last-div-title center">Second section</h1>
+  <p>Descubrí por donde empezar el camino de regreso hacia vos 
+
+    y tu propio bienestar.
+    
+    
+    
+    Para conocerte y amar esa combinación única que trajiste al nacer, debes comenzar por observarte a travez de los elementos de la naturaleza. 
+    
+    Lo saludable no es lo mismo para todos. Cada uno tiene su propio y especial conjunto de necesidades, retos y atributos. 
+    
+    ​
+    
+    Con el Test de Doshas vas a descubrir cómo es tu composición, que sentís, cuales son tus preferencias. Como punto de partida para recuperar tu equilibrio</p>
+</div>
+<div class="card mb-3 second-section-home">
+  <div class="card-body second-section-div">
+    <p>Abrite a la realidad de ser quién sos.</p>
+    <p> Una de las reglas del Universo es que nada es perfecto</p> 
+    <p>La perfección no existe sin la imperfección. </p>
+    <p>¡Animate a ser vos!</p>
+​    <div style="display: flex; justify-content: space-around;">
+      <div>
+        <a href="#"><i class="fas fa-cookie-bite fa-3x icon-last-div"></i></a>
+        <p>Recipies</p>
+      </div>
+      <div>
+        <a href="#"><i class="fas fa-edit fa-3x icon-last-div"></i></a>
+        <p>Blog</p>
+      </div>
+      <div>
+        <a href="#"><i class="fas fa-graduation-cap fa-3x icon-last-div"></i></a>
+        <p>Courses</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="card mb-3 second-section-second-div flex-column">
+  <div class="last-div">
+    <h1 class="last-div-title">#chanchirutinas online</h1>
+    <p>
+      
+      3 #yoguirutinas distintas con 3 objetivos distintos para que realices desde la comodidad de tu casa y en tus horarios.
+    </p>
+    <p>Cada una es una experiencia completa y diferente de la otra, que te 
+      invita a hacer las pausas necesarias en tu día, que te ayuden a conseguir 
+      bienestar tanto físico como mental y emocional.
+    </p>
+  </div>
+  
+  <div class="center">
+    <iframe width="400" height="275" src="https://www.youtube.com/embed/YWXJCHhaNXI" frameborder="0" allowfullscreen></iframe>
+        </iframe>
+  </div>
+  <div class="last-div">
+    <h1 class="last-div-title">¿Qué vas a lograr con estas rutinas de yoga?</h1>
+    <p>
+      Construir una "rutina integral de YOGA"  que te motive a mantenerla en el tiempo
+    </p>
+    <p>En cada una de ellas vas a encontrar: un calendario, una guía y material en video, audios y pdf.
+      Tenes la opción de hacer cada una de ellas por separado o adquirir las 3 #yoguirutinas juntas, 
+      para obtener un plan de acompañamiento completo
+    </p>
+    <p>Cada una de mis yoguirutinas son una forma diferente de 
+      lograr bienestar que parte del autoconocimiento, de la aceptación y el amor hacia vos misma. 
+      Pero con un método organizado con pasos simples y prácticos para que pronto puedas sentir la diferencia y 
+      te sientas motivada a mantenerla en el tiempo.
+    </p>
+  </div>
+  <div style="background-color: rgb(198, 229, 211);">
+    <h1 class="last-div-title"> Estas #chanchirutinas son para vos sí:</h1>
+    
+    <p class="last-div" >Queres una actividad física que además te conecte con vos misma.
+
+      Incluir recursos del Yoga que te enseñen a pausar tus días y encontrar bienestar.
+      
+      Sentirte motivada con tu práctica diaria con desafíos alcanzables.
+      
+      Necesitas recargar tus pilas y empoderarte y a hacer crecer tu autoestima.
+      
+      Buscás reducir el estrés diario y aprender a manejar tus emociones.
+      
+      Conocerte y aceptarte para mejorar la relación con vos misma y con los demás.
+    </p>
+  </div>
+  <div>
+    {% include 'message_form.html' %}
+  </div>
+  <div>
+    {% include 'news_form.html' %}
+  </div>
+
+</div>
+
+
+
+
+{% endblock %}

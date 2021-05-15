@@ -63,7 +63,7 @@ def set_random_rarity():
         list_of_rarity.append('RARE')
     for i in range(14):
         list_of_rarity.append('EPIC')
-    for i in range(4):
+    for i in range(40):
         list_of_rarity.append('LEGENDARY')
     choice = random.choice(list_of_rarity)
     print('choice made')

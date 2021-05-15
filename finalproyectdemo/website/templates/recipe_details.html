@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}CHANCHITO YOGA RECIPE {{ recipe.name }}{% endblock %}
+
+
+
+{% block content%}
+{% include 'navbar.html' %} 
+<div class="center">
+  <h1>Title</h1>
+  <p>Another content</p>
+</div>
+<div style="display: flex; justify-content: center;">
+  <div class="card mb-3" style="max-width: 1000px;">
+    <h5 style="padding: 10px; margin: 20px; text-align: center;" class="card-title">NAME OF THE RECIPE: {{ recipe.name }}</h5>
+      <img class="card-img-top" style="max-width: 800px; padding: 70px 70px 0 70px;" src="{{ recipe.image_url }}" alt="Card image cap">
+      <div class="card-body">
+        
+        <p class="card-text"> <strong> INGREDIENTES: </strong>{{ recipe.ingredients}}</p>
+        <hr>
+        <p> <strong> PREPARATION: </strong> {{ recipe.preparation }} </p>
+        <hr>
+        <p><strong>EXTRA INFORMATION: </strong> {{ recipe.extra }}</p>
+        <p class="card-text"><small class="text-muted"> Creation date {{ recipe.created_at }}</small></p>
+      </div>
+  </div>
+</div>
+<p class="card-text"><a class="btn btn-primary btn-lg" href="/recipes">Back to recipes</a></p> 
+
+
+{% endblock %}

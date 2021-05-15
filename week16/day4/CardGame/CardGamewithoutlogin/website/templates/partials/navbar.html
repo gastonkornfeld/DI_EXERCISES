@@ -9,7 +9,7 @@
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
             {% if session['id_user_logged'] != 0 %}
-            <a class="nav-item nav-link active" href="/">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link active" href="/index">Home <span class="sr-only">(current)</span></a>
             <a class="nav-item nav-link active" href="/market">Market <span class="sr-only">(current)</span></a>
             <a class="nav-item nav-link active" href="/profile/{{ session['id_user_logged'] }}">Profile <span class="sr-only">(current)</span></a>
             <a class="nav-item nav-link active" href="/threads">Threads <span class="sr-only">(current)</span></a>

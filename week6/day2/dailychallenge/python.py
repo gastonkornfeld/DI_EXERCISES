@@ -1,3 +1,13 @@
+
+"""
+This excercise was intended to practice if, elif, else conditional. Strings manipulation.
+and shuffle from random library.
+This excercise is part of the full stack developer course from developers institute 
+"""
+
+
+
+
 import random
 
 
@@ -21,6 +31,7 @@ import random
 
 user_string = ""
 
+# 
 while len(user_string) != 10:
     user_string = input("write a string containing exactly 10 carhacters: \n")
     if len(user_string) < 10:
@@ -43,8 +54,11 @@ for letter in user_string:
 
 
 
+# with random.shuffle we shuffle the characters of the string in a random way.
 
 random.shuffle(list_of_characters)
+
+# create a new string with join
 
 print(''.join(list_of_characters))
 

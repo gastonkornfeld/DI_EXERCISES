@@ -5,15 +5,15 @@ let allH2 = document.getElementsByTagName("h2")
 for (let i = 0; i < allH2.length; i++) {
     allH2[i].addEventListener('mouseover', () => {
         allH2[i].style.color= "black"
-        allH2[i].style.backgroundColor = "salmon"
-        allH2[i].style.fontFamily = "courier"
+        allH2[i].style.backgroundColor = "aliceblue"
+        allH2[i].style.fontFamily = "garamond"
     })
 }
 for (let i = 0; i < allH2.length; i++) {
     allH2[i].addEventListener('mouseleave', () => {
         allH2[i].style.color= "orange"
-        allH2[i].style.backgroundColor = "#f2dede"
-        allH2[i].style.fontFamily = "monospace"
+        allH2[i].style.backgroundColor = "black"
+        allH2[i].style.fontFamily = "garamond"
     })
 }
 
